@@ -46,6 +46,7 @@ local function recipe(category, subgroup, duration, recipeId, inputs, outputs)
         energy_required = duration,
         ingredients = inputs,
         results = outputs,
+        allow_as_intermediate = false,
         main_product = outputs[1]["name"]
     }
 end
