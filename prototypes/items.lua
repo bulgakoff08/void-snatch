@@ -26,7 +26,7 @@ local function machine (itemId, stackSize, subgroup)
 end
 
 data:extend({
-    fuel("vs-void-catalyst", 1000, "catalyst-duplication", "2MJ"),
+    fuel("vs-void-catalyst", 1000, "catalyst-duplication", "12MJ"),
     machine("vs-snatch-chest", 50, "void-machines"),
     machine("vs-void-generator", 50, "void-machines"),
     {

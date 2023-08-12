@@ -1,0 +1,9 @@
+Version 0.0.2 / 12-08-2023
+- Made Void Generator's sprite to match mod color schema
+- Increased fuel value of Void Catalyst
+- Made Void Generator's sound less annoying
+- Increased Snatch Chest's inventory to 200 slots
+- Made thumbnail font color darker to match other author's mods
+
+Version 0.0.1 / 09-08-2023
+- Initial mod state

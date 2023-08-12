@@ -153,8 +153,8 @@ data:extend({
         min_perceived_performance = 0.25,
         performance_to_sound_speedup = 0.5,
         working_sound = {
-            sound = {filename = "__base__/sound/steam-turbine.ogg", volume = 0.5},
-            match_speed_to_activity = true,
+            sound = {filename = "__base__/sound/steam-turbine.ogg", volume = 0.25},
+            match_speed_to_activity = false,
         },
         open_sound = {filename = "__base__/sound/machine-open.ogg", volume = 0.85},
         close_sound = {filename = "__base__/sound/machine-close.ogg", volume = 0.75}
@@ -204,7 +204,7 @@ data:extend({
             }
         },
         link_id = 4904,
-        inventory_size = 100,
+        inventory_size = 200,
         inventory_type = "with_filters_and_bar",
         gui_mode = "none",
         circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
