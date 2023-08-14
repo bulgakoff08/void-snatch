@@ -45,6 +45,7 @@ local function recipe(category, subgroup, duration, recipeId, inputs, outputs)
         subgroup = subgroup,
         energy_required = duration,
         ingredients = inputs,
+        hide_from_player_crafting = category == "smelting",
         results = outputs,
         allow_as_intermediate = false,
         main_product = outputs[1]["name"]
@@ -87,7 +88,20 @@ data:extend({
 
     recipe("crafting", "void-machines", 1, "vs-void-generator", items("iron-chest", 1, "iron-gear-wheel", 3, "copper-cable", 10), items("vs-void-generator", 1)),
     recipe("crafting", "void-machines", 1, "vs-snatch-chest", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-snatch-chest", 1)),
-
+    {
+        type = "recipe",
+        name = "vs-meditate",
+        category = "crafting",
+        subgroup = "void-other",
+        energy_required = 300,
+        icon = GRAPHICS_PATH .. "icons/recipes/meditate.png",
+        icon_size = 64,
+        allow_as_intermediate = false,
+        ingredients = {},
+        results = {
+            {type = "item", name = "vs-void-catalyst", amount = 100},
+        }
+    },
     {
         type = "recipe",
         name = "vs-void-snatch",

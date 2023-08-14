@@ -1,3 +1,7 @@
+Version 0.0.3 / 12-08-2023
+- Hidden Information Note's smelting recipes from player's crafting menu
+- Added Meditation recipe for infinite Void Catalyst production
+
 Version 0.0.2 / 12-08-2023
 - Made Void Generator's sprite to match mod color schema
 - Increased fuel value of Void Catalyst

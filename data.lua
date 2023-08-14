@@ -40,5 +40,9 @@ data:extend({
     {
         type = "fuel-category",
         name = "void-fuel"
+    },
+    {
+        type = "recipe-category",
+        name = "meditation"
     }
 })
