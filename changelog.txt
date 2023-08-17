@@ -1,3 +1,6 @@
+Version 0.0.4 / 17-08-2023
+- New animation for Void Generator
+
 Version 0.0.3 / 12-08-2023
 - Hidden Information Note's smelting recipes from player's crafting menu
 - Added Meditation recipe for infinite Void Catalyst production
