@@ -45,21 +45,46 @@ data:extend({
                     height = 76,
                     shift = util.by_pixel(-0.5, -0.5),
                     scale = 0.5,
-                    animation_speed = 0.1,
-                    frame_count = 3,
+                    animation_speed = 0.75,
+                    frame_count = 8,
                     stripes = {
                         {
-                            filename = GRAPHICS_PATH .. "entities/void-generator-working-a.png",
+                            filename = GRAPHICS_PATH .. "entities/void-generator-a.png",
                             width_in_frames = 1,
                             height_in_frames = 1
                         },
                         {
-                            filename = GRAPHICS_PATH .. "entities/void-generator-working-b.png",
+                            filename = GRAPHICS_PATH .. "entities/void-generator-b.png",
                             width_in_frames = 1,
                             height_in_frames = 1
                         },
                         {
-                            filename = GRAPHICS_PATH .. "entities/void-generator-working-c.png",
+                            filename = GRAPHICS_PATH .. "entities/void-generator-c.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
+                        {
+                            filename = GRAPHICS_PATH .. "entities/void-generator-d.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
+                        {
+                            filename = GRAPHICS_PATH .. "entities/void-generator-e.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
+                        {
+                            filename = GRAPHICS_PATH .. "entities/void-generator-f.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
+                        {
+                            filename = GRAPHICS_PATH .. "entities/void-generator-g.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
+                        {
+                            filename = GRAPHICS_PATH .. "entities/void-generator-h.png",
                             width_in_frames = 1,
                             height_in_frames = 1
                         }
@@ -71,9 +96,34 @@ data:extend({
                     height = 50,
                     shift = util.by_pixel(10.5, 6),
                     draw_as_shadow = true,
-                    frame_count = 3,
+                    frame_count = 8,
                     scale = 0.5,
                     stripes = {
+                        {
+                            filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
+                        {
+                            filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
+                        {
+                            filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
+                        {
+                            filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
+                        {
+                            filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
+                            width_in_frames = 1,
+                            height_in_frames = 1
+                        },
                         {
                             filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
                             width_in_frames = 1,
@@ -93,63 +143,6 @@ data:extend({
                 }
             }
         },
-        idle_animation = {
-            layers = {
-                {
-                    priority = "extra-high",
-                    width = 66,
-                    height = 76,
-                    shift = util.by_pixel(-0.5, -0.5),
-                    scale = 0.5,
-                    animation_speed = 1,
-                    frame_count = 3,
-                    stripes = {
-                        {
-                            filename = GRAPHICS_PATH .. "entities/void-generator-idle.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
-                        },
-                        {
-                            filename = GRAPHICS_PATH .. "entities/void-generator-idle.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
-                        },
-                        {
-                            filename = GRAPHICS_PATH .. "entities/void-generator-idle.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
-                        }
-                    }
-                },
-                {
-                    priority = "extra-high",
-                    width = 110,
-                    height = 50,
-                    shift = util.by_pixel(10.5, 6),
-                    draw_as_shadow = true,
-                    frame_count = 3,
-                    scale = 0.5,
-                    stripes = {
-                        {
-                            filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
-                        },
-                        {
-                            filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
-                        },
-                        {
-                            filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
-                        }
-                    }
-                }
-            }
-        },
-
         min_perceived_performance = 0.25,
         performance_to_sound_speedup = 0.5,
         working_sound = {
