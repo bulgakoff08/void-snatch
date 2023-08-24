@@ -1,3 +1,6 @@
+Version 0.0.6 / 25-08-2023
+- Added Hungry Chests
+
 Version 0.0.5 / 24-08-2023
 Added settings:
 - Snatch Chest inventory size

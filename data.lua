@@ -38,6 +38,12 @@ data:extend({
         order = "d-a"
     },
     {
+        type = "item-subgroup",
+        name = "void-chests",
+        group = "void-snatch",
+        order = "e-a"
+    },
+    {
         type = "fuel-category",
         name = "void-fuel"
     }

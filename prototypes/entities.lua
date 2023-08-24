@@ -3,6 +3,63 @@ local GRAPHICS_PATH = "__void-snatch__/graphics/"
 local SETTING_SNATCH_CHEST_SIZE = "vs-snatch-chest-size"
 local SETTING_VOID_GENERATOR_OUTPUT = "vs-void-generator-output"
 
+function createHungryChest (identifier, linkId)
+    return {
+        type = "linked-container",
+        name = "vs-hungry-chest-" .. identifier,
+        icon = GRAPHICS_PATH .. "icons/vs-hungry-chest-" .. identifier .. ".png",
+        icon_size = 64,
+        flags = {"placeable-neutral", "player-creation"},
+        minable = {
+            mining_time = 0.5,
+            results = {
+                {type = "item", name = "vs-hungry-chest-" .. identifier, amount = 1}
+            }
+        },
+        max_health = 250,
+        corpse = "iron-chest-remnants",
+        dying_explosion = "iron-chest-explosion",
+        vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+        resistances = {
+            {type = "fire", percent = 90},
+            {type = "explosion", percent = 30},
+            {type = "impact", percent = 30}
+        },
+        collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
+        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        picture = {
+            layers = {
+                {
+                    filename = GRAPHICS_PATH .. "entities/hungry-chest-" .. identifier .. ".png",
+                    priority = "extra-high",
+                    width = 66,
+                    height = 76,
+                    shift = util.by_pixel(-0.5, -0.5),
+                    scale = 0.5
+                },
+                {
+                    filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
+                    priority = "extra-high",
+                    width = 110,
+                    height = 50,
+                    shift = util.by_pixel(10.5, 6),
+                    draw_as_shadow = true,
+                    scale = 0.5
+                }
+            }
+        },
+        link_id = linkId,
+        inventory_size = 40,
+        inventory_type = "with_filters_and_bar",
+        gui_mode = "none",
+        circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+        circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
+        circuit_wire_max_distance = default_circuit_wire_max_distance,
+        open_sound = {filename = "__base__/sound/machine-open.ogg", volume = 0.85},
+        close_sound = {filename = "__base__/sound/machine-close.ogg", volume = 0.75}
+    }
+end
+
 data:extend({
     {
         type = "burner-generator",
@@ -209,5 +266,10 @@ data:extend({
         circuit_wire_max_distance = default_circuit_wire_max_distance,
         open_sound = {filename = "__base__/sound/machine-open.ogg", volume = 0.85},
         close_sound = {filename = "__base__/sound/machine-close.ogg", volume = 0.75}
-    }
+    },
+    createHungryChest("a", 4905),
+    createHungryChest("b", 4906),
+    createHungryChest("c", 4907),
+    createHungryChest("d", 4908),
+    createHungryChest("e", 4909)
 })

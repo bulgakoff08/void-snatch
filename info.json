@@ -1,8 +1,8 @@
 {
 	"name": "void-snatch",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"title": "Void Snatch",
-	"description": "A simple factorio mod inspired by SpaceBlock. It represents resources dupe recipes for those who want SpaceBlock without SpaceBlock, for example start game in Factorissimo2 building or limited 300x300 map",
+	"description": "A simple factorio mod inspired by SpaceBlock. Contains void resources duplication recipes, linked chests, low-tier power generator and a little piece of magic. Rich items descriptions in EN and RU",
 	"author": "mad_engineer",
 	"dependencies": ["?simply-greenhouse"],
 	"factorio_version": "1.1"

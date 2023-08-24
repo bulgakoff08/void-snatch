@@ -44,13 +44,58 @@ end)
 if calculateTicksForSpawnInterval() > 0 then
     script.on_nth_tick(calculateTicksForSpawnInterval(), function(event)
         local player = game.get_player(1)
-        local snatchInventory = player.force.get_linked_inventory("vs-snatch-chest", 0)
-        if snatchInventory == nil then
+        local inventory = player.force.get_linked_inventory("vs-snatch-chest", 0)
+        if inventory == nil then
             return
         end
-        local catalystCount = snatchInventory.get_item_count("vs-void-catalyst")
-        if catalystCount < 1000 then
-            snatchInventory.insert({name = "vs-void-catalyst", amount = 1})
+        if inventory.get_item_count("vs-void-catalyst") < 1000 then
+            inventory.insert({ name = "vs-void-catalyst", amount = 1})
         end
     end)
 end
+
+function randomItem (dictionary)
+    local keys = {}
+    for key, _ in pairs(dictionary) do
+        table.insert(keys, key)
+    end
+    local index = math.random(1, #keys)
+    return keys[index]
+end
+
+function createHungryChestHandler (chestId)
+    return function(event)
+        local player = game.get_player(1)
+        local inventory = player.force.get_linked_inventory(chestId, 0)
+        if inventory == nil then
+            return
+        end
+        if inventory.get_item_count("vs-void-catalyst") > 0 then
+            inventory.remove({ name = "vs-void-catalyst", amount = 1})
+            if math.random(1, 100) < 50 then
+                inventory.insert({ name = "iron-plate", amount = 1})
+            end
+            if math.random(1, 100) < 40 then
+                inventory.insert({ name = "stone", amount = 1})
+            end
+            if math.random(1, 100) < 40 then
+                inventory.insert({ name = "wood", amount = 1})
+            end
+            if math.random(1, 100) < 30 then
+                inventory.insert({ name = "coal", amount = 1})
+            end
+            if math.random(1, 100) < 20 then
+                inventory.insert({ name = "copper-plate", amount = 1})
+            end
+            if math.random(1, 100) < 5 then
+                inventory.insert({ name = "uranium-ore", amount = 1})
+            end
+        end
+    end
+end
+
+script.on_nth_tick(280, createHungryChestHandler("vs-hungry-chest-a"))
+script.on_nth_tick(290, createHungryChestHandler("vs-hungry-chest-b"))
+script.on_nth_tick(300, createHungryChestHandler("vs-hungry-chest-c"))
+script.on_nth_tick(310, createHungryChestHandler("vs-hungry-chest-d"))
+script.on_nth_tick(320, createHungryChestHandler("vs-hungry-chest-e"))
