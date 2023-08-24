@@ -1,4 +1,8 @@
 local GRAPHICS_PATH = "__void-snatch__/graphics/"
+
+local SETTING_SNATCH_CHEST_SIZE = "vs-snatch-chest-size"
+local SETTING_VOID_GENERATOR_OUTPUT = "vs-void-generator-output"
+
 data:extend({
     {
         type = "burner-generator",
@@ -33,7 +37,7 @@ data:extend({
             fuel_inventory_size = 1,
             render_no_power_icon = true,
         },
-        max_power_output = "150KW",
+        max_power_output = settings.startup[SETTING_VOID_GENERATOR_OUTPUT].value,
         energy_usage = "0kW",
         collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
@@ -197,7 +201,7 @@ data:extend({
             }
         },
         link_id = 4904,
-        inventory_size = 200,
+        inventory_size = settings.startup[SETTING_SNATCH_CHEST_SIZE].value,
         inventory_type = "with_filters_and_bar",
         gui_mode = "none",
         circuit_wire_connection_point = circuit_connector_definitions["chest"].points,

@@ -1,5 +1,7 @@
 local GRAPHICS_PATH = "__void-snatch__/graphics/"
 
+local SETTING_VOID_CATALYST_FUEL_VALUE = "vs-void-catalyst-fuel-value"
+
 local function item (itemId, stackSize, subgroup)
     return {
         type = "item",
@@ -26,7 +28,7 @@ local function machine (itemId, stackSize, subgroup)
 end
 
 data:extend({
-    fuel("vs-void-catalyst", 1000, "catalyst-duplication", "12MJ"),
+    fuel("vs-void-catalyst", 1000, "catalyst-duplication", settings.startup[SETTING_VOID_CATALYST_FUEL_VALUE].value),
     machine("vs-snatch-chest", 50, "void-machines"),
     machine("vs-void-generator", 50, "void-machines"),
     {

@@ -1,3 +1,11 @@
+Version 0.0.5 / 24-08-2023
+Added settings:
+- Snatch Chest inventory size
+- Interval for Void Catalyst to be spawned inside the Snatch Chest
+- Energy output of Void Generator
+- Fuel value of Void Catalyst
+- Chance of Void Catalyst be given on craft
+
 Version 0.0.4 / 17-08-2023
 - New animation for Void Generator
 
