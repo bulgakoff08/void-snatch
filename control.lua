@@ -71,24 +71,27 @@ function createHungryChestHandler (chestId)
             return
         end
         if inventory.get_item_count("vs-void-catalyst") > 0 then
-            inventory.remove({ name = "vs-void-catalyst", amount = 1})
+            local inserted = 0
             if math.random(1, 100) < 50 then
-                inventory.insert({ name = "iron-plate", amount = 1})
+                inserted = inserted + inventory.insert({ name = "iron-ore", amount = 1})
             end
             if math.random(1, 100) < 40 then
-                inventory.insert({ name = "stone", amount = 1})
+                inserted = inserted + inventory.insert({ name = "stone", amount = 1})
             end
             if math.random(1, 100) < 40 then
-                inventory.insert({ name = "wood", amount = 1})
+                inserted = inserted + inventory.insert({ name = "wood", amount = 1})
             end
             if math.random(1, 100) < 30 then
-                inventory.insert({ name = "coal", amount = 1})
+                inserted = inserted + inventory.insert({ name = "coal", amount = 1})
             end
             if math.random(1, 100) < 20 then
-                inventory.insert({ name = "copper-plate", amount = 1})
+                inserted = inserted + inventory.insert({ name = "copper-ore", amount = 1})
             end
             if math.random(1, 100) < 5 then
-                inventory.insert({ name = "uranium-ore", amount = 1})
+                inserted = inserted + inventory.insert({ name = "uranium-ore", amount = 1})
+            end
+            if inserted > 0 then
+                inventory.remove({ name = "vs-void-catalyst", amount = 1})
             end
         end
     end
