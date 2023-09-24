@@ -76,6 +76,8 @@ data:extend({
     recipeWithIcon("crafting-with-fluid", "catalyst-duplication", 5, "uranium-ore-multiply", items("uranium-ore", 2, "sulfuric-acid", 4, "vs-void-catalyst", 1), items("uranium-ore", 4)),
     recipeWithIcon("crafting", "catalyst-duplication", 5, "wood-multiply", items("wood", 2, "vs-void-catalyst", 1), items("wood", 4)),
 
+    recipe("crafting", "void-machines", "10", "vs-condensed-void-stone", items("vs-void-catalyst", 1000), items("vs-condensed-void-stone", 1)),
+
     recipe("smelting", "void-other", "2", "vs-book-burn-1", items("vs-helping-book-1", 1), items("vs-void-catalyst", 100)),
     recipe("smelting", "void-other", "2", "vs-book-burn-2", items("vs-helping-book-2", 1), items("vs-void-catalyst", 100)),
     recipe("smelting", "void-other", "2", "vs-book-burn-3", items("vs-helping-book-3", 1), items("vs-void-catalyst", 100)),

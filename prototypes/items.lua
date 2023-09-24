@@ -2,6 +2,15 @@ local GRAPHICS_PATH = "__void-snatch__/graphics/"
 
 local SETTING_VOID_CATALYST_FUEL_VALUE = "vs-void-catalyst-fuel-value"
 
+local ENERGY_VALUE_DICT = {
+    ["6MJ"] = {value = 6, unit = "MJ"},
+    ["12MJ"] = {value = 12, unit = "MJ"},
+    ["24MJ"] = {value = 24, unit = "MJ"},
+    ["48MJ"] = {value = 48, unit = "MJ"},
+    ["100MJ"] = {value = 100, unit = "MJ"},
+    ["1GJ"] = {value = 1, unit = "GJ"},
+}
+
 local function item (itemId, stackSize, subgroup)
     return {
         type = "item",
@@ -27,8 +36,12 @@ local function machine (itemId, stackSize, subgroup)
     return result
 end
 
+local energyValue = ENERGY_VALUE_DICT[settings.startup[SETTING_VOID_CATALYST_FUEL_VALUE].value]
+
 data:extend({
-    fuel("vs-void-catalyst", 1000, "catalyst-duplication", settings.startup[SETTING_VOID_CATALYST_FUEL_VALUE].value),
+    fuel("vs-void-catalyst", 1000, "catalyst-duplication", energyValue.value .. energyValue.unit),
+    fuel("vs-condensed-void-stone", 1, "catalyst-duplication", (energyValue.value * 1000) .. energyValue.unit),
+
     machine("vs-snatch-chest", 50, "void-machines"),
     machine("vs-void-generator", 50, "void-machines"),
 

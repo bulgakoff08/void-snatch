@@ -1,3 +1,7 @@
+Version 0.0.8 / 24-09-2023
+- Optimized code
+- Added Condensed Void Stone - much denser form of Void Catalyst
+
 Version 0.0.7 / 07-09-2023
 - Fixed issue when Hungry Chest continues to consume void catalyst when inventory is full
 - Hungry Chest now produce iron and copper ores instead of plates
