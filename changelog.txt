@@ -1,3 +1,6 @@
+Version 0.0.9 / 25-09-2023
+- Increased fuel value of Condensed Void Stone to match "Annihilation Reactor" mod
+
 Version 0.0.8 / 24-09-2023
 - Optimized code
 - Added Condensed Void Stone - much denser form of Void Catalyst
