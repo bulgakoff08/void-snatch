@@ -1,3 +1,8 @@
+Version 0.0.10 / 16-10-2023
+- Removed Helping Books recipes
+- Removed Duplication recipes with catalyst (due to hungry chest can now consume Condensed Void Stone)
+- Added void furnace that produces Void Catalyst
+
 Version 0.0.9 / 25-09-2023
 - Increased fuel value of Condensed Void Stone to match "Annihilation Reactor" mod
 

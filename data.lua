@@ -44,6 +44,10 @@ data:extend({
         order = "e-a"
     },
     {
+        type = "recipe-category",
+        name = "void-smelting"
+    },
+    {
         type = "fuel-category",
         name = "void-fuel"
     }

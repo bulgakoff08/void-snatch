@@ -44,6 +44,7 @@ data:extend({
 
     machine("vs-snatch-chest", 50, "void-machines"),
     machine("vs-void-generator", 50, "void-machines"),
+    machine("vs-void-furnace", 50, "void-machines"),
 
     machine("vs-hungry-chest-a", 50, "void-chests"),
     machine("vs-hungry-chest-b", 50, "void-chests"),
