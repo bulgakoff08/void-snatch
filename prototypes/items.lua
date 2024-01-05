@@ -51,6 +51,7 @@ data:extend({
     machine("vs-hungry-chest-c", 50, "void-chests"),
     machine("vs-hungry-chest-d", 50, "void-chests"),
     machine("vs-hungry-chest-e", 50, "void-chests"),
+    machine("vs-hungry-chest-f", 50, "void-chests"),
 
     {
         type = "item",

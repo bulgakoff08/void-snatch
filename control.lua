@@ -1,7 +1,7 @@
 local SETTING_VOID_CATALYST_SPAWN_INTERVAL = "vs-void-catalyst-spawn-interval"
 local SETTING_VOID_CATALYST_SPAWN_CHANCE = "vs-void-catalyst-spawn-chance"
 
-function calculateTicksForSpawnInterval ()
+local function calculateTicksForSpawnInterval ()
     return settings.startup[SETTING_VOID_CATALYST_SPAWN_INTERVAL].value * 60
 end
 
@@ -50,6 +50,10 @@ if calculateTicksForSpawnInterval() > 0 then
         end
         if inventory.get_item_count("vs-void-catalyst") < 1000 then
             inventory.insert({ name = "vs-void-catalyst", count = 1})
+        else
+            if inventory.insert({ name = "vs-condensed-void-stone", count = 1}) == 1 then
+                inventory.remove({ name = "vs-void-catalyst", count = 999})
+            end
         end
     end)
 end
@@ -63,11 +67,11 @@ local function addOne (table, itemId)
 end
 
 local oreChances = {
-    ["iron-ore"] = 50,
-    ["stone"] = 40,
-    ["wood"] = 40,
-    ["coal"] = 30,
-    ["copper-ore"] = 20,
+    ["iron-ore"] = 40,
+    ["stone"] = 30,
+    ["wood"] = 25,
+    ["coal"] = 25,
+    ["copper-ore"] = 15,
     ["uranium-ore"] = 5
 }
 
@@ -115,8 +119,9 @@ local function createHungryChestHandler (chestId)
     end
 end
 
-script.on_nth_tick(290, createHungryChestHandler("vs-hungry-chest-a"))
-script.on_nth_tick(295, createHungryChestHandler("vs-hungry-chest-b"))
-script.on_nth_tick(300, createHungryChestHandler("vs-hungry-chest-c"))
-script.on_nth_tick(305, createHungryChestHandler("vs-hungry-chest-d"))
-script.on_nth_tick(310, createHungryChestHandler("vs-hungry-chest-e"))
+script.on_nth_tick(300, createHungryChestHandler("vs-hungry-chest-a"))
+script.on_nth_tick(301, createHungryChestHandler("vs-hungry-chest-b"))
+script.on_nth_tick(302, createHungryChestHandler("vs-hungry-chest-c"))
+script.on_nth_tick(303, createHungryChestHandler("vs-hungry-chest-d"))
+script.on_nth_tick(304, createHungryChestHandler("vs-hungry-chest-e"))
+script.on_nth_tick(305, createHungryChestHandler("vs-hungry-chest-f"))

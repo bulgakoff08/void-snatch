@@ -91,6 +91,7 @@ data:extend({
     recipe("crafting", "void-chests", 1, "vs-hungry-chest-c", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-c", 1)),
     recipe("crafting", "void-chests", 1, "vs-hungry-chest-d", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-d", 1)),
     recipe("crafting", "void-chests", 1, "vs-hungry-chest-e", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-e", 1)),
+    recipe("crafting", "void-chests", 1, "vs-hungry-chest-f", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-f", 1)),
 
     {
         type = "recipe",

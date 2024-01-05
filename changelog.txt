@@ -1,3 +1,9 @@
+Version 0.0.11 / 05-01-2024
+- Added sixth Hungry Chest (F)
+- Updated translations
+- Adjusted probabilities for ore generation inside Hungry Chests
+- Snatch Chest now creates Condensed Void Stone if Void Catalyst count inside it exceeds one stack
+
 Version 0.0.10 / 16-10-2023
 - Removed Helping Books recipes
 - Removed Duplication recipes with catalyst (due to hungry chest can now consume Condensed Void Stone)

@@ -272,6 +272,7 @@ data:extend({
     createHungryChest("c", 4907),
     createHungryChest("d", 4908),
     createHungryChest("e", 4909),
+    createHungryChest("f", 4916),
     {
         type = "furnace",
         name = "vs-void-furnace",
