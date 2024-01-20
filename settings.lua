@@ -3,6 +3,7 @@ local SETTING_VOID_CATALYST_SPAWN_INTERVAL = "vs-void-catalyst-spawn-interval"
 local SETTING_VOID_GENERATOR_OUTPUT = "vs-void-generator-output"
 local SETTING_VOID_CATALYST_FUEL_VALUE = "vs-void-catalyst-fuel-value"
 local SETTING_VOID_CATALYST_SPAWN_CHANCE = "vs-void-catalyst-spawn-chance"
+local SETTING_VOID_CATALYST_EXCESS_SCENARIO = "vs-void-catalyst-excess-scenario"
 
 data:extend({
     {
@@ -19,6 +20,13 @@ data:extend({
         setting_type = "startup",
         default_value = 10,
         allowed_values = {0, 1, 5, 10, 15, 30, 60}
+    },
+    {
+        type = "string-setting",
+        name = SETTING_VOID_CATALYST_EXCESS_SCENARIO,
+        setting_type = "startup",
+        default_value = "Turn into Void Stone",
+        allowed_values = {"Do nothing", "Continue generating", "Turn into Void Stone"}
     },
     {
         type = "string-setting",

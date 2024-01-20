@@ -1,5 +1,10 @@
 local SETTING_VOID_CATALYST_SPAWN_INTERVAL = "vs-void-catalyst-spawn-interval"
 local SETTING_VOID_CATALYST_SPAWN_CHANCE = "vs-void-catalyst-spawn-chance"
+local SETTING_VOID_CATALYST_EXCESS_SCENARIO = "vs-void-catalyst-excess-scenario"
+
+local SCENARIO_CONTINUE = "Continue generating"
+local SCENARIO_CONVERT = "Turn into Void Stone"
+
 
 local function calculateTicksForSpawnInterval ()
     return settings.startup[SETTING_VOID_CATALYST_SPAWN_INTERVAL].value * 60
@@ -50,10 +55,12 @@ if calculateTicksForSpawnInterval() > 0 then
         end
         if inventory.get_item_count("vs-void-catalyst") < 1000 then
             inventory.insert({ name = "vs-void-catalyst", count = 1})
-        else
+        elseif settings.startup[SETTING_VOID_CATALYST_EXCESS_SCENARIO].value == SCENARIO_CONVERT then
             if inventory.insert({ name = "vs-condensed-void-stone", count = 1}) == 1 then
                 inventory.remove({ name = "vs-void-catalyst", count = 999})
             end
+        elseif settings.startup[SETTING_VOID_CATALYST_EXCESS_SCENARIO].value == SCENARIO_CONTINUE then
+            inventory.insert({ name = "vs-void-catalyst", count = 1})
         end
     end)
 end
@@ -119,9 +126,9 @@ local function createHungryChestHandler (chestId)
     end
 end
 
-script.on_nth_tick(300, createHungryChestHandler("vs-hungry-chest-a"))
-script.on_nth_tick(301, createHungryChestHandler("vs-hungry-chest-b"))
-script.on_nth_tick(302, createHungryChestHandler("vs-hungry-chest-c"))
-script.on_nth_tick(303, createHungryChestHandler("vs-hungry-chest-d"))
-script.on_nth_tick(304, createHungryChestHandler("vs-hungry-chest-e"))
-script.on_nth_tick(305, createHungryChestHandler("vs-hungry-chest-f"))
+script.on_nth_tick(301, createHungryChestHandler("vs-hungry-chest-a"))
+script.on_nth_tick(302, createHungryChestHandler("vs-hungry-chest-b"))
+script.on_nth_tick(303, createHungryChestHandler("vs-hungry-chest-c"))
+script.on_nth_tick(304, createHungryChestHandler("vs-hungry-chest-d"))
+script.on_nth_tick(305, createHungryChestHandler("vs-hungry-chest-e"))
+script.on_nth_tick(306, createHungryChestHandler("vs-hungry-chest-f"))
