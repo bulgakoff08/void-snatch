@@ -39,19 +39,17 @@ end
 local energyValue = ENERGY_VALUE_DICT[settings.startup[SETTING_VOID_CATALYST_FUEL_VALUE].value]
 
 data:extend({
+
+    item("vs-void-stone", 1, "catalyst-duplication"),
+    item("vs-void-shard", 1, "catalyst-duplication"),
+    item("vs-void-nugget", 1, "catalyst-duplication"),
+    item("vs-used-void-nugget", 1, "catalyst-duplication"),
+
     fuel("vs-void-catalyst", 1000, "catalyst-duplication", energyValue.value .. energyValue.unit),
-    fuel("vs-condensed-void-stone", 1, "catalyst-duplication", (energyValue.value * 10000) .. energyValue.unit),
 
     machine("vs-snatch-chest", 50, "void-machines"),
     machine("vs-void-generator", 50, "void-machines"),
     machine("vs-void-furnace", 50, "void-machines"),
-
-    machine("vs-hungry-chest-a", 50, "void-chests"),
-    machine("vs-hungry-chest-b", 50, "void-chests"),
-    machine("vs-hungry-chest-c", 50, "void-chests"),
-    machine("vs-hungry-chest-d", 50, "void-chests"),
-    machine("vs-hungry-chest-e", 50, "void-chests"),
-    machine("vs-hungry-chest-f", 50, "void-chests"),
 
     {
         type = "item",
@@ -80,6 +78,14 @@ data:extend({
     {
         type = "item",
         name = "vs-helping-book-4",
+        icon = GRAPHICS_PATH .. "icons/vs-helping-book.png",
+        icon_size = 64,
+        subgroup = "void-machines",
+        stack_size = 1
+    },
+    {
+        type = "item",
+        name = "vs-helping-book-5",
         icon = GRAPHICS_PATH .. "icons/vs-helping-book.png",
         icon_size = 64,
         subgroup = "void-machines",
