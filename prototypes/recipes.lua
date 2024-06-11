@@ -60,13 +60,13 @@ local function recipeWithIcon(category, subgroup, duration, icon, inputs, output
 end
 
 data:extend({
-    recipeWithIcon("crafting", "resource-duplication", 5, "coal-duplicate", items("coal", 5), items("coal", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 5, "copper-ore-duplicate", items("copper-ore", 5), items("copper-ore", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 5, "iron-ore-duplicate", items("iron-ore", 5), items("iron-ore", 6)),
-    recipeWithIcon("crafting-with-fluid", "resource-duplication", 5, "oil-duplicate", items("crude-oil", 125), items("crude-oil", 165)),
-    recipeWithIcon("crafting", "resource-duplication", 5, "stone-duplicate", items("stone", 5), items("stone", 6)),
-    recipeWithIcon("crafting-with-fluid", "resource-duplication", 5, "uranium-ore-duplicate", items("uranium-ore", 5, "sulfuric-acid", 10), items("uranium-ore", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 5, "wood-duplicate", items("wood", 5), items("wood", 6)),
+    recipeWithIcon("crafting", "resource-duplication", 5, "coal-duplicate", items("coal", 5, "vs-void-catalyst", 1), items("coal", 6)),
+    recipeWithIcon("crafting", "resource-duplication", 5, "copper-ore-duplicate", items("copper-ore", 5, "vs-void-catalyst", 1), items("copper-ore", 6)),
+    recipeWithIcon("crafting", "resource-duplication", 5, "iron-ore-duplicate", items("iron-ore", 5, "vs-void-catalyst", 1), items("iron-ore", 6)),
+    recipeWithIcon("crafting-with-fluid", "resource-duplication", 5, "oil-duplicate", items("crude-oil", 125, "vs-void-catalyst", 1), items("crude-oil", 165)),
+    recipeWithIcon("crafting", "resource-duplication", 5, "stone-duplicate", items("stone", 5, "vs-void-catalyst", 1), items("stone", 6)),
+    recipeWithIcon("crafting-with-fluid", "resource-duplication", 5, "uranium-ore-duplicate", items("uranium-ore", 5, "sulfuric-acid", 10, "vs-void-catalyst", 1), items("uranium-ore", 6)),
+    recipeWithIcon("crafting", "resource-duplication", 5, "wood-duplicate", items("wood", 5, "vs-void-catalyst", 1), items("wood", 6)),
 
     recipe("crafting", "void-machines", "10", "vs-condensed-void-stone", items("vs-void-catalyst", 1000), items("vs-condensed-void-stone", 1)),
 
@@ -82,16 +82,16 @@ data:extend({
     recipe("void-smelting", "void-other", 1, "vs-uranium-ore-voiding", items("uranium-ore", 1), items("vs-void-catalyst", 4)),
     recipe("void-smelting", "void-other", 1, "vs-wood-voiding", items("wood", 1), items("vs-void-catalyst", 1)),
 
-    recipe("crafting", "void-machines", 1, "vs-void-generator", items("iron-chest", 1, "iron-gear-wheel", 3, "copper-cable", 10), items("vs-void-generator", 1)),
-    recipe("crafting", "void-machines", 1, "vs-snatch-chest", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-snatch-chest", 1)),
-    recipe("crafting", "void-machines", 1, "vs-void-furnace", items("stone-furnace", 1, "vs-void-catalyst", 5), items("vs-void-furnace", 1)),
+    recipe("crafting", "void-machines", 1, "vs-void-generator", items("iron-chest", 1, "iron-gear-wheel", 3, "copper-cable", 10, "vs-void-catalyst", 50), items("vs-void-generator", 1)),
+    recipe("crafting", "void-machines", 1, "vs-snatch-chest", items("iron-chest", 1, "vs-void-catalyst", 50), items("vs-snatch-chest", 1)),
+    recipe("crafting", "void-machines", 1, "vs-void-furnace", items("stone-furnace", 1, "vs-void-catalyst", 200), items("vs-void-furnace", 1)),
 
-    recipe("crafting", "void-chests", 1, "vs-hungry-chest-a", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-a", 1)),
-    recipe("crafting", "void-chests", 1, "vs-hungry-chest-b", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-b", 1)),
-    recipe("crafting", "void-chests", 1, "vs-hungry-chest-c", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-c", 1)),
-    recipe("crafting", "void-chests", 1, "vs-hungry-chest-d", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-d", 1)),
-    recipe("crafting", "void-chests", 1, "vs-hungry-chest-e", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-e", 1)),
-    recipe("crafting", "void-chests", 1, "vs-hungry-chest-f", items("iron-chest", 1, "vs-void-catalyst", 5), items("vs-hungry-chest-f", 1)),
+    recipe("crafting", "void-chests", 1, "vs-hungry-chest-a", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-a", 1)),
+    recipe("crafting", "void-chests", 1, "vs-hungry-chest-b", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-b", 1)),
+    recipe("crafting", "void-chests", 1, "vs-hungry-chest-c", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-c", 1)),
+    recipe("crafting", "void-chests", 1, "vs-hungry-chest-d", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-d", 1)),
+    recipe("crafting", "void-chests", 1, "vs-hungry-chest-e", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-e", 1)),
+    recipe("crafting", "void-chests", 1, "vs-hungry-chest-f", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-f", 1)),
 
     {
         type = "recipe",
@@ -115,7 +115,9 @@ data:extend({
         energy_required = 2,
         icon = GRAPHICS_PATH .. "icons/recipes/void-snatch.png",
         icon_size = 64,
-        ingredients = {},
+        ingredients = {
+            {type = "item", name = "vs-void-catalyst", amount = 1}
+        },
         results = {
             {type = "item", name = "coal", amount = 1, probability = 0.3},
             {type = "item", name = "copper-ore", amount = 1, probability = 0.2},
@@ -133,7 +135,9 @@ data:extend({
         energy_required = 2,
         icon = GRAPHICS_PATH .. "icons/recipes/void-snatch-oil.png",
         icon_size = 64,
-        ingredients = {},
+        ingredients = {
+            {type = "item", name = "vs-void-catalyst", amount = 2}
+        },
         results = {
             {type = "item", name = "coal", amount = 1, probability = 0.3},
             {type = "item", name = "copper-ore", amount = 1, probability = 0.2},

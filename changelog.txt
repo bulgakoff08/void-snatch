@@ -1,3 +1,7 @@
+Version 0.0.13 / ??-??-2024
+- Duplication recipes now require Void Catalyst
+- Typos in descriptions
+
 Version 0.0.12 / 21-01-2024
 - Added setting for what to do when there are more than 1000 Void Catalyst inside the Snatch Chest
 - Fixed bug when Void Catalyst was not generated if the interval set to 5 seconds
