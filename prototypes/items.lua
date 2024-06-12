@@ -41,9 +41,9 @@ local energyValue = ENERGY_VALUE_DICT[settings.startup[SETTING_VOID_CATALYST_FUE
 data:extend({
 
     item("vs-void-stone", 1, "catalyst-duplication"),
-    item("vs-void-shard", 1, "catalyst-duplication"),
-    item("vs-void-nugget", 1, "catalyst-duplication"),
-    item("vs-used-void-nugget", 1, "catalyst-duplication"),
+    item("vs-void-shard", 5, "catalyst-duplication"),
+    item("vs-void-nugget", 50, "catalyst-duplication"),
+    item("vs-used-void-nugget", 50, "catalyst-duplication"),
 
     fuel("vs-void-catalyst", 1000, "catalyst-duplication", energyValue.value .. energyValue.unit),
 

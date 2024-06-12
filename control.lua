@@ -38,6 +38,7 @@ script.on_event(defines.events.on_player_created, function(event)
     end
     global.donePlayers[player] = true
     local inventory = player.get_main_inventory()
+    inventory.insert({name = "vs-void-stone", count = 1})
     inventory.insert({name = "vs-helping-book-1", count = 1})
     inventory.insert({name = "vs-helping-book-2", count = 1})
     inventory.insert({name = "vs-helping-book-3", count = 1})

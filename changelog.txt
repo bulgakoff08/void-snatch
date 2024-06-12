@@ -1,5 +1,8 @@
 Version 0.1.0 / ??-??-2024
+- Void recipes now require Void Stone
+- Added Void Shards and Void Nuggets
 - Duplication recipes now require Void Catalyst
+- Removed Hungry Chests
 - Typos in descriptions
 
 Version 0.0.12 / 21-01-2024

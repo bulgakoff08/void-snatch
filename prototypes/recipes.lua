@@ -66,7 +66,7 @@ data:extend({
     recipe("crafting", "catalyst-duplication", 1, "vs-void-shard", items("vs-void-stone", 1), items("vs-void-shard", 10)),
     recipe("crafting", "catalyst-duplication", 1, "vs-void-nugget", items("vs-void-shard", 1), items("vs-void-nugget", 10)),
 
-    recipe("crafting", "catalyst-duplication", 0.5, "vs-void-catalyst", items("vs-void-nugget", 1), items("vs-void-catalyst", 1, "vs-used-void-nugget", 1)),
+    recipe("crafting", "catalyst-duplication", 0.25, "vs-void-catalyst", items("vs-void-nugget", 1), items("vs-void-catalyst", 1, "vs-used-void-nugget", 1)),
 
     recipeWithIcon("crafting", "resource-duplication", 5, "coal-duplicate", items("coal", 5, "vs-void-catalyst", 1), items("coal", 6)),
     recipeWithIcon("crafting", "resource-duplication", 5, "copper-ore-duplicate", items("copper-ore", 5, "vs-void-catalyst", 1), items("copper-ore", 6)),
@@ -82,12 +82,12 @@ data:extend({
     recipe("smelting", "void-other", 2, "vs-book-burn-4", items("vs-helping-book-4", 1), items("vs-void-catalyst", 200)),
     recipe("smelting", "void-other", 2, "vs-book-burn-5", items("vs-helping-book-5", 1), items("vs-void-catalyst", 200)),
 
-    recipe("void-smelting", "void-other", 1, "vs-coal-voiding", items("coal", 10), items("vs-void-catalyst", 1)),
-    recipe("void-smelting", "void-other", 1, "vs-copper-ore-voiding", items("copper-ore", 10), items("vs-void-catalyst", 2)),
-    recipe("void-smelting", "void-other", 1, "vs-iron-ore-voiding", items("iron-ore", 10), items("vs-void-catalyst", 2)),
-    recipe("void-smelting", "void-other", 1, "vs-stone-voiding", items("stone", 10), items("vs-void-catalyst", 1)),
-    recipe("void-smelting", "void-other", 1, "vs-uranium-ore-voiding", items("uranium-ore", 10), items("vs-void-catalyst", 4)),
-    recipe("void-smelting", "void-other", 1, "vs-wood-voiding", items("wood", 10), items("vs-void-catalyst", 1)),
+    recipe("void-smelting", "void-other", 1, "vs-coal-voiding", items("coal", 5), items("vs-void-catalyst", 1)),
+    recipe("void-smelting", "void-other", 1, "vs-copper-ore-voiding", items("copper-ore", 5), items("vs-void-catalyst", 2)),
+    recipe("void-smelting", "void-other", 1, "vs-iron-ore-voiding", items("iron-ore", 5), items("vs-void-catalyst", 2)),
+    recipe("void-smelting", "void-other", 1, "vs-stone-voiding", items("stone", 5), items("vs-void-catalyst", 1)),
+    recipe("void-smelting", "void-other", 1, "vs-uranium-ore-voiding", items("uranium-ore", 5), items("vs-void-catalyst", 4)),
+    recipe("void-smelting", "void-other", 1, "vs-wood-voiding", items("wood", 5), items("vs-void-catalyst", 1)),
 
     recipe("crafting", "void-machines", 1, "vs-void-generator", items("iron-chest", 1, "iron-gear-wheel", 3, "copper-cable", 10, "vs-void-catalyst", 50), items("vs-void-generator", 1)),
     recipe("crafting", "void-machines", 1, "vs-snatch-chest", items("iron-chest", 1, "vs-void-catalyst", 50), items("vs-snatch-chest", 1)),
