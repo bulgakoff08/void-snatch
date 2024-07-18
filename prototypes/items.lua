@@ -51,6 +51,13 @@ data:extend({
     machine("vs-void-generator", 50, "void-machines"),
     machine("vs-void-furnace", 50, "void-machines"),
 
+    machine("vs-hungry-chest-a", 50, "void-chests"),
+    machine("vs-hungry-chest-b", 50, "void-chests"),
+    machine("vs-hungry-chest-c", 50, "void-chests"),
+    machine("vs-hungry-chest-d", 50, "void-chests"),
+    machine("vs-hungry-chest-e", 50, "void-chests"),
+    machine("vs-hungry-chest-f", 50, "void-chests"),
+
     {
         type = "item",
         name = "vs-helping-book-1",

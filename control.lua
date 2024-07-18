@@ -63,3 +63,64 @@ if calculateTicksForSpawnInterval() > 0 then
         end
     end)
 end
+
+local function addOne (table, itemId)
+    if table[itemId] == nil then
+        table[itemId] = 1
+    else
+        table[itemId] = table[itemId] + 1
+    end
+end
+
+local oreChances = {
+    ["iron-ore"] = 40,
+    ["stone"] = 30,
+    ["wood"] = 25,
+    ["coal"] = 25,
+    ["copper-ore"] = 15,
+    ["uranium-ore"] = 5
+}
+
+local function calculateOresSpawn (factor)
+    local result = {}
+    for _ = 1, factor do
+        for ore, chance in pairs(oreChances) do
+            if math.random(1, 100) < chance then
+                addOne(result, ore)
+            end
+        end
+    end
+    return result
+end
+
+local function fillInventory (inventory, table)
+    local inserted = 0
+    for key, value in pairs(table) do
+        if value > 0 then
+            inserted = inserted + inventory.insert({name = key, count = value})
+        end
+    end
+    return inserted
+end
+
+local function createHungryChestHandler (chestId)
+    return function(event)
+        local player = game.get_player(1)
+        local inventory = player.force.get_linked_inventory(chestId, 0)
+        if inventory == nil then
+            return
+        end
+        if inventory.get_item_count("vs-void-catalyst") > 0 then
+            if fillInventory(inventory, calculateOresSpawn(1)) > 0 then
+                inventory.remove({ name = "vs-void-catalyst", count = 1})
+            end
+        end
+    end
+end
+
+script.on_nth_tick(61, createHungryChestHandler("vs-hungry-chest-a"))
+script.on_nth_tick(62, createHungryChestHandler("vs-hungry-chest-b"))
+script.on_nth_tick(63, createHungryChestHandler("vs-hungry-chest-c"))
+script.on_nth_tick(64, createHungryChestHandler("vs-hungry-chest-d"))
+script.on_nth_tick(65, createHungryChestHandler("vs-hungry-chest-e"))
+script.on_nth_tick(66, createHungryChestHandler("vs-hungry-chest-f"))
