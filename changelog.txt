@@ -1,8 +1,8 @@
-Version 0.1.0 / ??-??-2024
-- Void recipes now require Void Stone
+Version 0.0.13 / 22-10-2024
+- Updated Factorio Version
 - Added Void Shards and Void Nuggets
+- Void recipes now require Void Shards
 - Duplication recipes now require Void Catalyst
-- Removed Hungry Chests
 - Typos in descriptions
 
 Version 0.0.12 / 21-01-2024

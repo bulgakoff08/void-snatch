@@ -32,8 +32,8 @@ data:extend({
         type = "string-setting",
         name = SETTING_VOID_GENERATOR_OUTPUT,
         setting_type = "startup",
-        default_value = "150KW",
-        allowed_values = {"100KW", "150KW", "500KW", "1MW", "5MW"}
+        default_value = "150kW",
+        allowed_values = {"100kW", "150kW", "500kW", "1MW", "5MW"}
     },
     {
         type = "string-setting",

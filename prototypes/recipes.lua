@@ -82,6 +82,13 @@ data:extend({
     recipe("smelting", "void-other", 2, "vs-book-burn-4", items("vs-helping-book-4", 1), items("vs-void-catalyst", 200)),
     recipe("smelting", "void-other", 2, "vs-book-burn-5", items("vs-helping-book-5", 1), items("vs-void-catalyst", 200)),
 
+    recipe("smelting", "void-chests", 1, "vs-hungry-chest-a-smelt", items("vs-hungry-chest-a", 1), items("vs-hungry-chest-b", 1)),
+    recipe("smelting", "void-chests", 1, "vs-hungry-chest-b-smelt", items("vs-hungry-chest-b", 1), items("vs-hungry-chest-c", 1)),
+    recipe("smelting", "void-chests", 1, "vs-hungry-chest-c-smelt", items("vs-hungry-chest-c", 1), items("vs-hungry-chest-d", 1)),
+    recipe("smelting", "void-chests", 1, "vs-hungry-chest-d-smelt", items("vs-hungry-chest-d", 1), items("vs-hungry-chest-e", 1)),
+    recipe("smelting", "void-chests", 1, "vs-hungry-chest-e-smelt", items("vs-hungry-chest-e", 1), items("vs-hungry-chest-f", 1)),
+    recipe("smelting", "void-chests", 1, "vs-hungry-chest-f-smelt", items("vs-hungry-chest-f", 1), items("vs-hungry-chest-a", 1)),
+
     recipe("void-smelting", "void-other", 1, "vs-coal-voiding", items("coal", 5), items("vs-void-catalyst", 1)),
     recipe("void-smelting", "void-other", 1, "vs-copper-ore-voiding", items("copper-ore", 5), items("vs-void-catalyst", 2)),
     recipe("void-smelting", "void-other", 1, "vs-iron-ore-voiding", items("iron-ore", 5), items("vs-void-catalyst", 2)),

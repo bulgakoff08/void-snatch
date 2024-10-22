@@ -27,16 +27,16 @@ script.on_event(defines.events.on_player_created, function(event)
     if (player.character == nil) then
         return
     end
-    if global == nil then
-        global = {}
+    if storage == nil then
+        storage = {}
     end
-    if (global.donePlayers == nil) then
-        global.donePlayers = {}
+    if (storage.donePlayers == nil) then
+        storage.donePlayers = {}
     end
-    if (global.donePlayers[player] ~= nil) then
+    if (storage.donePlayers[player] ~= nil) then
         return
     end
-    global.donePlayers[player] = true
+    storage.donePlayers[player] = true
     local inventory = player.get_main_inventory()
     inventory.insert({name = "vs-void-stone", count = 1})
     inventory.insert({name = "vs-helping-book-1", count = 1})
