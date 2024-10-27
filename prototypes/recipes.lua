@@ -61,20 +61,18 @@ end
 
 data:extend({
 
-
     recipe("crafting", "catalyst-duplication", 1, "vs-void-stone", items("vs-used-void-nugget", 100), items("vs-void-stone", 1)),
     recipe("crafting", "catalyst-duplication", 1, "vs-void-shard", items("vs-void-stone", 1), items("vs-void-shard", 10)),
     recipe("crafting", "catalyst-duplication", 1, "vs-void-nugget", items("vs-void-shard", 1), items("vs-void-nugget", 10)),
-
     recipe("crafting", "catalyst-duplication", 0.25, "vs-void-catalyst", items("vs-void-nugget", 1), items("vs-void-catalyst", 1, "vs-used-void-nugget", 1)),
 
-    recipeWithIcon("crafting", "resource-duplication", 5, "coal-duplicate", items("coal", 5, "vs-void-catalyst", 1), items("coal", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 5, "copper-ore-duplicate", items("copper-ore", 5, "vs-void-catalyst", 1), items("copper-ore", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 5, "iron-ore-duplicate", items("iron-ore", 5, "vs-void-catalyst", 1), items("iron-ore", 6)),
-    recipeWithIcon("crafting-with-fluid", "resource-duplication", 5, "oil-duplicate", items("crude-oil", 125, "vs-void-catalyst", 1), items("crude-oil", 165)),
-    recipeWithIcon("crafting", "resource-duplication", 5, "stone-duplicate", items("stone", 5, "vs-void-catalyst", 1), items("stone", 6)),
-    recipeWithIcon("crafting-with-fluid", "resource-duplication", 5, "uranium-ore-duplicate", items("uranium-ore", 5, "sulfuric-acid", 10, "vs-void-catalyst", 1), items("uranium-ore", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 5, "wood-duplicate", items("wood", 5, "vs-void-catalyst", 1), items("wood", 6)),
+    recipeWithIcon("crafting", "resource-duplication", 3, "coal-duplicate", items("coal", 5, "vs-void-catalyst", 1), items("coal", 6)),
+    recipeWithIcon("crafting", "resource-duplication", 3, "copper-ore-duplicate", items("copper-ore", 5, "vs-void-catalyst", 1), items("copper-ore", 6)),
+    recipeWithIcon("crafting", "resource-duplication", 3, "iron-ore-duplicate", items("iron-ore", 5, "vs-void-catalyst", 1), items("iron-ore", 6)),
+    recipeWithIcon("crafting-with-fluid", "resource-duplication", 3, "oil-duplicate", items("crude-oil", 125, "vs-void-catalyst", 1), items("crude-oil", 165)),
+    recipeWithIcon("crafting", "resource-duplication", 3, "stone-duplicate", items("stone", 5, "vs-void-catalyst", 1), items("stone", 6)),
+    recipeWithIcon("crafting", "resource-duplication", 3, "uranium-ore-duplicate", items("uranium-ore", 5, "vs-void-catalyst", 1), items("uranium-ore", 6)),
+    recipeWithIcon("crafting", "resource-duplication", 3, "wood-duplicate", items("wood", 5, "vs-void-catalyst", 1), items("wood", 6)),
 
     recipe("smelting", "void-other", 2, "vs-book-burn-1", items("vs-helping-book-1", 1), items("vs-void-catalyst", 200)),
     recipe("smelting", "void-other", 2, "vs-book-burn-2", items("vs-helping-book-2", 1), items("vs-void-catalyst", 200)),
@@ -126,14 +124,12 @@ data:extend({
         name = "vs-void-snatch",
         category = "crafting",
         subgroup = "void-machines",
-        energy_required = 2,
+        energy_required = 5,
         icon = GRAPHICS_PATH .. "icons/recipes/void-snatch.png",
         icon_size = 64,
-        ingredients = {
-            {type = "item", name = "vs-void-shard", amount = 1}
-        },
+        ingredients = {},
         results = {
-            {type = "item", name = "vs-used-void-nugget", amount = 10},
+            {type = "item", name = "vs-used-void-nugget", amount = 1, probability = 0.01},
             {type = "item", name = "coal", amount = 1, probability = 0.3},
             {type = "item", name = "copper-ore", amount = 1, probability = 0.2},
             {type = "item", name = "iron-ore", amount = 1, probability = 0.5},
@@ -147,14 +143,12 @@ data:extend({
         name = "vs-void-snatch-with-oil",
         category = "crafting-with-fluid",
         subgroup = "void-machines",
-        energy_required = 2,
+        energy_required = 5,
         icon = GRAPHICS_PATH .. "icons/recipes/void-snatch-oil.png",
         icon_size = 64,
-        ingredients = {
-            {type = "item", name = "vs-void-shard", amount = 1}
-        },
+        ingredients = {},
         results = {
-            {type = "item", name = "vs-used-void-nugget", amount = 10},
+            {type = "item", name = "vs-used-void-nugget", amount = 1, probability = 0.01},
             {type = "item", name = "coal", amount = 1, probability = 0.3},
             {type = "item", name = "copper-ore", amount = 1, probability = 0.2},
             {type = "item", name = "iron-ore", amount = 1, probability = 0.5},

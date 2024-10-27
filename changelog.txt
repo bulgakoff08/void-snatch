@@ -1,3 +1,10 @@
+Version 0.0.14 / TDB
+- Removed void catalyst from snatch recipes
+- Removed acid from uranium duplication
+- Added reseach for Void Stone
+- Added nugget output chance for snatch recipes so could have more than one Void Stone over time
+- Updated and revised descriptions
+
 Version 0.0.13 / 22-10-2024
 - Updated Factorio Version
 - Added Void Shards and Void Nuggets
