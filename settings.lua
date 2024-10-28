@@ -10,7 +10,7 @@ data:extend({
         type = "int-setting",
         name = SETTING_SNATCH_CHEST_SIZE,
         setting_type = "startup",
-        default_value = 200,
+        default_value = 150,
         minimum_value = 1,
         maximum_value = 10000
     },
@@ -25,15 +25,15 @@ data:extend({
         type = "string-setting",
         name = SETTING_VOID_CATALYST_EXCESS_SCENARIO,
         setting_type = "startup",
-        default_value = "Turn into Void Stone",
-        allowed_values = {"Do nothing", "Continue generating", "Turn into Void Stone"}
+        default_value = "Do nothing",
+        allowed_values = {"Do nothing", "Continue generating"}
     },
     {
         type = "string-setting",
         name = SETTING_VOID_GENERATOR_OUTPUT,
         setting_type = "startup",
-        default_value = "150KW",
-        allowed_values = {"100KW", "150KW", "500KW", "1MW", "5MW"}
+        default_value = "150kW",
+        allowed_values = {"100kW", "150kW", "500kW", "1MW", "5MW"}
     },
     {
         type = "string-setting",
@@ -46,7 +46,7 @@ data:extend({
         type = "double-setting",
         name = SETTING_VOID_CATALYST_SPAWN_CHANCE,
         setting_type = "startup",
-        default_value = 0.5,
+        default_value = 0.2,
         minimum_value = 0.0,
         maximum_value = 1.0
     }

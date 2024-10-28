@@ -3,8 +3,6 @@ local SETTING_VOID_CATALYST_SPAWN_CHANCE = "vs-void-catalyst-spawn-chance"
 local SETTING_VOID_CATALYST_EXCESS_SCENARIO = "vs-void-catalyst-excess-scenario"
 
 local SCENARIO_CONTINUE = "Continue generating"
-local SCENARIO_CONVERT = "Turn into Void Stone"
-
 
 local function calculateTicksForSpawnInterval ()
     return settings.startup[SETTING_VOID_CATALYST_SPAWN_INTERVAL].value * 60
@@ -29,21 +27,23 @@ script.on_event(defines.events.on_player_created, function(event)
     if (player.character == nil) then
         return
     end
-    if global == nil then
-        global = {}
+    if storage == nil then
+        storage = {}
     end
-    if (global.donePlayers == nil) then
-        global.donePlayers = {}
+    if (storage.donePlayers == nil) then
+        storage.donePlayers = {}
     end
-    if (global.donePlayers[player] ~= nil) then
+    if (storage.donePlayers[player] ~= nil) then
         return
     end
-    global.donePlayers[player] = true
+    storage.donePlayers[player] = true
     local inventory = player.get_main_inventory()
+    inventory.insert({name = "vs-void-stone", count = 1})
     inventory.insert({name = "vs-helping-book-1", count = 1})
     inventory.insert({name = "vs-helping-book-2", count = 1})
     inventory.insert({name = "vs-helping-book-3", count = 1})
     inventory.insert({name = "vs-helping-book-4", count = 1})
+    inventory.insert({name = "vs-helping-book-5", count = 1})
 end)
 
 if calculateTicksForSpawnInterval() > 0 then
@@ -53,12 +53,11 @@ if calculateTicksForSpawnInterval() > 0 then
         if inventory == nil then
             return
         end
+        if inventory.get_item_count("vs-void-stone") < 1 then
+            return
+        end
         if inventory.get_item_count("vs-void-catalyst") < 1000 then
             inventory.insert({ name = "vs-void-catalyst", count = 1})
-        elseif settings.startup[SETTING_VOID_CATALYST_EXCESS_SCENARIO].value == SCENARIO_CONVERT then
-            if inventory.insert({ name = "vs-condensed-void-stone", count = 1}) == 1 then
-                inventory.remove({ name = "vs-void-catalyst", count = 999})
-            end
         elseif settings.startup[SETTING_VOID_CATALYST_EXCESS_SCENARIO].value == SCENARIO_CONTINUE then
             inventory.insert({ name = "vs-void-catalyst", count = 1})
         end
@@ -108,27 +107,20 @@ local function createHungryChestHandler (chestId)
     return function(event)
         local player = game.get_player(1)
         local inventory = player.force.get_linked_inventory(chestId, 0)
-
         if inventory == nil then
             return
         end
-
         if inventory.get_item_count("vs-void-catalyst") > 0 then
             if fillInventory(inventory, calculateOresSpawn(1)) > 0 then
                 inventory.remove({ name = "vs-void-catalyst", count = 1})
             end
         end
-
-        if inventory.count_empty_stacks() == 39 and inventory.get_item_count("vs-condensed-void-stone") == 1 then
-            inventory.remove({ name = "vs-condensed-void-stone", count = 1})
-            fillInventory(inventory, calculateOresSpawn(1000))
-        end
     end
 end
 
-script.on_nth_tick(301, createHungryChestHandler("vs-hungry-chest-a"))
-script.on_nth_tick(302, createHungryChestHandler("vs-hungry-chest-b"))
-script.on_nth_tick(303, createHungryChestHandler("vs-hungry-chest-c"))
-script.on_nth_tick(304, createHungryChestHandler("vs-hungry-chest-d"))
-script.on_nth_tick(305, createHungryChestHandler("vs-hungry-chest-e"))
-script.on_nth_tick(306, createHungryChestHandler("vs-hungry-chest-f"))
+script.on_nth_tick(61, createHungryChestHandler("vs-hungry-chest-a"))
+script.on_nth_tick(62, createHungryChestHandler("vs-hungry-chest-b"))
+script.on_nth_tick(63, createHungryChestHandler("vs-hungry-chest-c"))
+script.on_nth_tick(64, createHungryChestHandler("vs-hungry-chest-d"))
+script.on_nth_tick(65, createHungryChestHandler("vs-hungry-chest-e"))
+script.on_nth_tick(66, createHungryChestHandler("vs-hungry-chest-f"))

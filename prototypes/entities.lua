@@ -3,7 +3,7 @@ local GRAPHICS_PATH = "__void-snatch__/graphics/"
 local SETTING_SNATCH_CHEST_SIZE = "vs-snatch-chest-size"
 local SETTING_VOID_GENERATOR_OUTPUT = "vs-void-generator-output"
 
-function createHungryChest (identifier, linkId)
+local function createHungryChest (identifier, linkId)
     return {
         type = "linked-container",
         name = "vs-hungry-chest-" .. identifier,
@@ -49,7 +49,7 @@ function createHungryChest (identifier, linkId)
             }
         },
         link_id = linkId,
-        inventory_size = 40,
+        inventory_size = settings.startup[SETTING_SNATCH_CHEST_SIZE].value,
         inventory_type = "with_filters_and_bar",
         gui_mode = "none",
         circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
@@ -267,12 +267,6 @@ data:extend({
         open_sound = {filename = "__base__/sound/machine-open.ogg", volume = 0.85},
         close_sound = {filename = "__base__/sound/machine-close.ogg", volume = 0.75}
     },
-    createHungryChest("a", 4905),
-    createHungryChest("b", 4906),
-    createHungryChest("c", 4907),
-    createHungryChest("d", 4908),
-    createHungryChest("e", 4909),
-    createHungryChest("f", 4916),
     {
         type = "furnace",
         name = "vs-void-furnace",
@@ -311,103 +305,105 @@ data:extend({
         source_inventory_size = 1,
         energy_source = {
             type = "burner",
-            fuel_category = "void-fuel",
+            fuel_categories = {"void-fuel"},
             effectivity = 1,
             fuel_inventory_size = 1,
-            emissions_per_minute = 0,
+            emissions_per_minute = {pollution = 0},
             light_flicker = {
                 color = {0,0,0},
                 minimum_intensity = 0.6,
                 maximum_intensity = 0.95
             }
         },
-        animation = {
-            layers = {
-                {
-                    filename = GRAPHICS_PATH .. "entities/void-furnace.png",
-                    priority = "extra-high",
-                    width = 151,
-                    height = 146,
-                    frame_count = 1,
-                    shift = util.by_pixel(-0.25, 6),
-                    scale = 0.5
-                },
-                {
-                    filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
-                    priority = "extra-high",
-                    width = 164,
-                    height = 74,
-                    frame_count = 1,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(14.5, 13),
-                    scale = 0.5
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = GRAPHICS_PATH .. "entities/void-furnace.png",
+                        priority = "extra-high",
+                        width = 151,
+                        height = 146,
+                        frame_count = 1,
+                        shift = util.by_pixel(-0.25, 6),
+                        scale = 0.5
+                    },
+                    {
+                        filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
+                        priority = "extra-high",
+                        width = 164,
+                        height = 74,
+                        frame_count = 1,
+                        draw_as_shadow = true,
+                        shift = util.by_pixel(14.5, 13),
+                        scale = 0.5
+                    }
                 }
-            }
-        },
-        working_visualisations = {
-            {
-                animation = {
-                    layers = {
-                        {
-                            priority = "extra-high",
-                            width = 151,
-                            height = 146,
-                            frame_count = 4,
-                            shift = util.by_pixel(-0.25, 6),
-                            animation_speed = 0.25,
-                            scale = 0.5,
-                            stripes = {
-                                {
-                                    filename = GRAPHICS_PATH .. "entities/void-furnace-a.png",
-                                    width_in_frames = 1,
-                                    height_in_frames = 1
-                                },
-                                {
-                                    filename = GRAPHICS_PATH .. "entities/void-furnace-b.png",
-                                    width_in_frames = 1,
-                                    height_in_frames = 1
-                                },
-                                {
-                                    filename = GRAPHICS_PATH .. "entities/void-furnace-c.png",
-                                    width_in_frames = 1,
-                                    height_in_frames = 1
-                                },
-                                {
-                                    filename = GRAPHICS_PATH .. "entities/void-furnace-d.png",
-                                    width_in_frames = 1,
-                                    height_in_frames = 1
+            },
+            working_visualisations = {
+                {
+                    animation = {
+                        layers = {
+                            {
+                                priority = "extra-high",
+                                width = 151,
+                                height = 146,
+                                frame_count = 4,
+                                shift = util.by_pixel(-0.25, 6),
+                                animation_speed = 0.25,
+                                scale = 0.5,
+                                stripes = {
+                                    {
+                                        filename = GRAPHICS_PATH .. "entities/void-furnace-a.png",
+                                        width_in_frames = 1,
+                                        height_in_frames = 1
+                                    },
+                                    {
+                                        filename = GRAPHICS_PATH .. "entities/void-furnace-b.png",
+                                        width_in_frames = 1,
+                                        height_in_frames = 1
+                                    },
+                                    {
+                                        filename = GRAPHICS_PATH .. "entities/void-furnace-c.png",
+                                        width_in_frames = 1,
+                                        height_in_frames = 1
+                                    },
+                                    {
+                                        filename = GRAPHICS_PATH .. "entities/void-furnace-d.png",
+                                        width_in_frames = 1,
+                                        height_in_frames = 1
+                                    }
                                 }
-                            }
-                        },
-                        {
-                            priority = "extra-high",
-                            width = 164,
-                            height = 74,
-                            frame_count = 4,
-                            draw_as_shadow = true,
-                            shift = util.by_pixel(14.5, 13),
-                            animation_speed = 0.25,
-                            scale = 0.5,
-                            stripes = {
-                                {
-                                    filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
-                                    width_in_frames = 1,
-                                    height_in_frames = 1
-                                },
-                                {
-                                    filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
-                                    width_in_frames = 1,
-                                    height_in_frames = 1
-                                },
-                                {
-                                    filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
-                                    width_in_frames = 1,
-                                    height_in_frames = 1
-                                },
-                                {
-                                    filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
-                                    width_in_frames = 1,
-                                    height_in_frames = 1
+                            },
+                            {
+                                priority = "extra-high",
+                                width = 164,
+                                height = 74,
+                                frame_count = 4,
+                                draw_as_shadow = true,
+                                shift = util.by_pixel(14.5, 13),
+                                animation_speed = 0.25,
+                                scale = 0.5,
+                                stripes = {
+                                    {
+                                        filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
+                                        width_in_frames = 1,
+                                        height_in_frames = 1
+                                    },
+                                    {
+                                        filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
+                                        width_in_frames = 1,
+                                        height_in_frames = 1
+                                    },
+                                    {
+                                        filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
+                                        width_in_frames = 1,
+                                        height_in_frames = 1
+                                    },
+                                    {
+                                        filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
+                                        width_in_frames = 1,
+                                        height_in_frames = 1
+                                    }
                                 }
                             }
                         }
@@ -415,5 +411,11 @@ data:extend({
                 }
             }
         }
-    }
+    },
+    createHungryChest("a", 4905),
+    createHungryChest("b", 4906),
+    createHungryChest("c", 4907),
+    createHungryChest("d", 4908),
+    createHungryChest("e", 4909),
+    createHungryChest("f", 4916)
 })
