@@ -1,9 +1,9 @@
-Version 0.0.14 / TDB
-- Removed void catalyst from snatch recipes
+Version 0.0.14 / 28-10-2024
+- Updated item descriptions to make it clearer and shorter
+- Removed void catalyst from "Check Pockets" recipes
 - Removed acid from uranium duplication
 - Added reseach for Void Stone
-- Added nugget output chance for snatch recipes so could have more than one Void Stone over time
-- Updated and revised descriptions
+- Added chance of getting nugget when using "Check Pockets"
 
 Version 0.0.13 / 22-10-2024
 - Updated Factorio Version

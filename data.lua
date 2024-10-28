@@ -50,5 +50,15 @@ data:extend({
     {
         type = "fuel-category",
         name = "void-fuel"
+    },
+    {
+        type = "technology",
+        name = "vs-void-stone",
+        icon = GRAPHICS_PATH .. "void-snatch.png",
+        icon_size = 128,
+        effects = {{type = "give-item", item = "vs-void-stone", count = 1}},
+        prerequisites = {},
+        order = "f-b-b",
+        unit = {count = 100, ingredients = {{"automation-science-pack", 1}}, time = 10}
     }
 })

@@ -61,8 +61,8 @@ end
 
 data:extend({
 
-    recipe("crafting", "catalyst-duplication", 1, "vs-void-stone", items("vs-used-void-nugget", 100), items("vs-void-stone", 1)),
-    recipe("crafting", "catalyst-duplication", 1, "vs-void-shard", items("vs-void-stone", 1), items("vs-void-shard", 10)),
+    recipe("crafting", "catalyst-duplication", 60, "vs-void-stone", items("vs-used-void-nugget", 100), items("vs-void-stone", 1)),
+    recipe("crafting", "catalyst-duplication", 2, "vs-void-shard", items("vs-void-stone", 1), items("vs-void-shard", 10)),
     recipe("crafting", "catalyst-duplication", 1, "vs-void-nugget", items("vs-void-shard", 1), items("vs-void-nugget", 10)),
     recipe("crafting", "catalyst-duplication", 0.25, "vs-void-catalyst", items("vs-void-nugget", 1), items("vs-void-catalyst", 1, "vs-used-void-nugget", 1)),
 
