@@ -9,7 +9,7 @@ local SCENARIO_CONTINUE = "Continue generating"
 --   time the game starts
 ----------------------------------------
 script.on_init(function(event)
-    storage.inventory={}    -- table of entities - one for each player, that are used to track 
+    storage.player={}    -- table of entities - one for each player, that are used to track 
 end)
 
 local function calculateTicksForSpawnInterval ()
@@ -21,7 +21,7 @@ local spawnChance = settings.startup[SETTING_VOID_CATALYST_SPAWN_CHANCE].value *
 if spawnChance > 0 then
     script.on_event(defines.events.on_player_crafted_item, function(event)
         local player = game.players[event.player_index]
-        local inventory = storage.inventory[player.index].inventory
+        local inventory = storage.player[player.index].inventory
         if inventory then
             if spawnChance >= math.random(1, 100) then
                 inventory.insert({name = "vs-void-catalyst", count = 1})
@@ -30,6 +30,7 @@ if spawnChance > 0 then
     end)
 end
 
+
 script.on_event(defines.events.on_player_created, function(event)
 end)
 
@@ -37,20 +38,20 @@ end)
 script.on_event(defines.events.on_player_main_inventory_changed, function(event)
     local player = game.players[event.player_index]
     local inventory = player.get_main_inventory()
-    if not storage.inventory[player.index] then
-        storage.inventory[player.index] = {initialized = true, inventory = inventory}
-    elseif not storage.inventory[player.index].initialized then 
-        storage.inventory[player.index] = {initialized = true, inventory = inventory}      -- track each players inventory
+    if not storage.player[player.index] then
+        storage.player[player.index] = {initialized = true, inventory = inventory}
+    elseif not storage.player[player.index].initialized then 
+        storage.player[player.index] = {initialized = true, inventory = inventory}      -- track each players inventory
     end
-    inventory = storage.inventory[player.index].inventory
-    if inventory and not storage.inventory[player.index].filled then
+    inventory = storage.player[player.index].inventory
+    if inventory and not storage.player[player.index].filled then
         inventory.insert({name = "vs-void-stone", count = 1})
         inventory.insert({name = "vs-helping-book-1", count = 1})
         inventory.insert({name = "vs-helping-book-2", count = 1})
         inventory.insert({name = "vs-helping-book-3", count = 1})
         inventory.insert({name = "vs-helping-book-4", count = 1})
         inventory.insert({name = "vs-helping-book-5", count = 1})
-        storage.inventory[player.index].filled = true
+        storage.player[player.index].filled = true
     end
 end)
 
@@ -147,13 +148,13 @@ script.on_nth_tick(66, createHungryChestHandler("vs-hungry-chest-f"))
 -- updating an existing game would crash with the invent of new variables if not initialized and 
 -- filled here
 script.on_configuration_changed(function(event)
-    if storage.inventory == nil then
-        storage.inventory = {}
-        -- update storage.inventory for each existing player
-        log ("Updating " .. #game.players .. " storage.inventory to their personal inventory")
+    if storage.player == nil then
+        storage.player = {}
+        -- update storage.player for each existing player
+        log ("Updating " .. #game.players .. " storage.player to their personal inventory")
         for name,player in pairs(game.players) do
-            if not storage.inventory[player.index] then
-                storage.inventory[player.index] = {initialized = true, inventory = player.get_main_inventory()}
+            if not storage.player[player.index] then
+                storage.player[player.index] = {initialized = true, inventory = player.get_main_inventory()}
             end
         end
     end
