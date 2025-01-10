@@ -118,11 +118,13 @@ local function fillInventory (inventory, table)
     return inserted
 end
 
-local function createHungryChestHandler (chestId)
-    return function(event)
-        for name, force in pairs(game.forces) do
-            if name ~= "neutral" and name ~= "enemy" and name ~= "_ABANDONED_" then
-                local inventory = force.get_linked_inventory(chestId, 0)
+local chestLetters = {"a", "b", "c", "d", "e", "f"}
+
+script.on_nth_tick(61, function(event)
+    for name, force in pairs(game.forces) do
+        if name ~= "neutral" and name ~= "enemy" and name ~= "_ABANDONED_" then
+            for _, letter in pairs(chestLetters) do
+                local inventory = force.get_linked_inventory("vs-hungry-chest-" .. letter, 0)
                 if inventory == nil then
                     return
                 end
@@ -134,15 +136,7 @@ local function createHungryChestHandler (chestId)
             end
         end
     end
-end
-
--- spread out the processing a bit to reduce lag
-script.on_nth_tick(61, createHungryChestHandler("vs-hungry-chest-a"))
-script.on_nth_tick(62, createHungryChestHandler("vs-hungry-chest-b"))
-script.on_nth_tick(63, createHungryChestHandler("vs-hungry-chest-c"))
-script.on_nth_tick(64, createHungryChestHandler("vs-hungry-chest-d"))
-script.on_nth_tick(65, createHungryChestHandler("vs-hungry-chest-e"))
-script.on_nth_tick(66, createHungryChestHandler("vs-hungry-chest-f"))
+end)
 
 --=================================================================================================
 -- updating an existing game would crash with the invent of new variables if not initialized and 

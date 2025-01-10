@@ -3,6 +3,7 @@ Version: 0.0.15 - updated vfinn/JustGoFly
 Date: 9-1-2025
 - added support for multiplayer
 - Added code to enable updates to existing saves.
+- Minor description typos
 
 - Pending implementation:
 - remote interface to support Brave New Oarc mod and other mods that deliver items to

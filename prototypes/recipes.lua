@@ -59,20 +59,25 @@ local function recipeWithIcon(category, subgroup, duration, icon, inputs, output
     return result
 end
 
+local function noRecycle (prototype)
+    prototype["auto_recycle"] = false
+    return prototype
+end
+
 data:extend({
 
-    recipe("crafting", "catalyst-duplication", 60, "vs-void-stone", items("vs-used-void-nugget", 100), items("vs-void-stone", 1)),
-    recipe("crafting", "catalyst-duplication", 2, "vs-void-shard", items("vs-void-stone", 1), items("vs-void-shard", 10)),
-    recipe("crafting", "catalyst-duplication", 1, "vs-void-nugget", items("vs-void-shard", 1), items("vs-void-nugget", 10)),
-    recipe("crafting", "catalyst-duplication", 0.25, "vs-void-catalyst", items("vs-void-nugget", 1), items("vs-void-catalyst", 1, "vs-used-void-nugget", 1)),
+    noRecycle(recipe("crafting", "catalyst-duplication", 60, "vs-void-stone", items("vs-used-void-nugget", 100), items("vs-void-stone", 1))),
+    noRecycle(recipe("crafting", "catalyst-duplication", 2, "vs-void-shard", items("vs-void-stone", 1), items("vs-void-shard", 10))),
+    noRecycle(recipe("crafting", "catalyst-duplication", 1, "vs-void-nugget", items("vs-void-shard", 1), items("vs-void-nugget", 10))),
+    noRecycle(recipe("crafting", "catalyst-duplication", 0.25, "vs-void-catalyst", items("vs-void-nugget", 1), items("vs-void-catalyst", 1, "vs-used-void-nugget", 1))),
 
-    recipeWithIcon("crafting", "resource-duplication", 3, "coal-duplicate", items("coal", 5, "vs-void-catalyst", 1), items("coal", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 3, "copper-ore-duplicate", items("copper-ore", 5, "vs-void-catalyst", 1), items("copper-ore", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 3, "iron-ore-duplicate", items("iron-ore", 5, "vs-void-catalyst", 1), items("iron-ore", 6)),
+    noRecycle(recipeWithIcon("crafting", "resource-duplication", 3, "coal-duplicate", items("coal", 5, "vs-void-catalyst", 1), items("coal", 6))),
+    noRecycle(recipeWithIcon("crafting", "resource-duplication", 3, "copper-ore-duplicate", items("copper-ore", 5, "vs-void-catalyst", 1), items("copper-ore", 6))),
+    noRecycle(recipeWithIcon("crafting", "resource-duplication", 3, "iron-ore-duplicate", items("iron-ore", 5, "vs-void-catalyst", 1), items("iron-ore", 6))),
     recipeWithIcon("crafting-with-fluid", "resource-duplication", 3, "oil-duplicate", items("crude-oil", 125, "vs-void-catalyst", 1), items("crude-oil", 165)),
-    recipeWithIcon("crafting", "resource-duplication", 3, "stone-duplicate", items("stone", 5, "vs-void-catalyst", 1), items("stone", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 3, "uranium-ore-duplicate", items("uranium-ore", 5, "vs-void-catalyst", 1), items("uranium-ore", 6)),
-    recipeWithIcon("crafting", "resource-duplication", 3, "wood-duplicate", items("wood", 5, "vs-void-catalyst", 1), items("wood", 6)),
+    noRecycle(recipeWithIcon("crafting", "resource-duplication", 3, "stone-duplicate", items("stone", 5, "vs-void-catalyst", 1), items("stone", 6))),
+    noRecycle(recipeWithIcon("crafting", "resource-duplication", 3, "uranium-ore-duplicate", items("uranium-ore", 5, "vs-void-catalyst", 1), items("uranium-ore", 6))),
+    noRecycle(recipeWithIcon("crafting", "resource-duplication", 3, "wood-duplicate", items("wood", 5, "vs-void-catalyst", 1), items("wood", 6))),
 
     recipe("smelting", "void-other", 2, "vs-book-burn-1", items("vs-helping-book-1", 1), items("vs-void-catalyst", 200)),
     recipe("smelting", "void-other", 2, "vs-book-burn-2", items("vs-helping-book-2", 1), items("vs-void-catalyst", 200)),
@@ -87,12 +92,12 @@ data:extend({
     recipe("smelting", "void-chests", 1, "vs-hungry-chest-e-smelt", items("vs-hungry-chest-e", 1), items("vs-hungry-chest-f", 1)),
     recipe("smelting", "void-chests", 1, "vs-hungry-chest-f-smelt", items("vs-hungry-chest-f", 1), items("vs-hungry-chest-a", 1)),
 
-    recipe("void-smelting", "void-other", 1, "vs-coal-voiding", items("coal", 5), items("vs-void-catalyst", 1)),
-    recipe("void-smelting", "void-other", 1, "vs-copper-ore-voiding", items("copper-ore", 5), items("vs-void-catalyst", 2)),
-    recipe("void-smelting", "void-other", 1, "vs-iron-ore-voiding", items("iron-ore", 5), items("vs-void-catalyst", 2)),
-    recipe("void-smelting", "void-other", 1, "vs-stone-voiding", items("stone", 5), items("vs-void-catalyst", 1)),
-    recipe("void-smelting", "void-other", 1, "vs-uranium-ore-voiding", items("uranium-ore", 5), items("vs-void-catalyst", 4)),
-    recipe("void-smelting", "void-other", 1, "vs-wood-voiding", items("wood", 5), items("vs-void-catalyst", 1)),
+    noRecycle(recipe("void-smelting", "void-other", 1, "vs-coal-voiding", items("coal", 5), items("vs-void-catalyst", 1))),
+    noRecycle(recipe("void-smelting", "void-other", 1, "vs-copper-ore-voiding", items("copper-ore", 5), items("vs-void-catalyst", 2))),
+    noRecycle(recipe("void-smelting", "void-other", 1, "vs-iron-ore-voiding", items("iron-ore", 5), items("vs-void-catalyst", 2))),
+    noRecycle(recipe("void-smelting", "void-other", 1, "vs-stone-voiding", items("stone", 5), items("vs-void-catalyst", 1))),
+    noRecycle(recipe("void-smelting", "void-other", 1, "vs-uranium-ore-voiding", items("uranium-ore", 5), items("vs-void-catalyst", 4))),
+    noRecycle(recipe("void-smelting", "void-other", 1, "vs-wood-voiding", items("wood", 5), items("vs-void-catalyst", 1))),
 
     recipe("crafting", "void-machines", 1, "vs-void-generator", items("iron-chest", 1, "iron-gear-wheel", 3, "copper-cable", 10, "vs-void-catalyst", 50), items("vs-void-generator", 1)),
     recipe("crafting", "void-machines", 1, "vs-snatch-chest", items("iron-chest", 1, "vs-void-catalyst", 50), items("vs-snatch-chest", 1)),
