@@ -1,47 +1,76 @@
-Version 0.0.14 / 28-10-2024
+---------------------------------------------------------------------------------------------------
+Version: 0.0.15 - updated vfinn/JustGoFly
+Date: 9-1-2025
+- added support for multiplayer
+- Added code to enable updates to existing saves.
+
+- Pending implementation:
+- remote interface to support Brave New Oarc mod and other mods that deliver items to
+  an entity other than the players inventory. Default is to deliver to players inventory.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.14 
+Date: 28-10-2024
 - Updated item descriptions to make it clearer and shorter
 - Removed void catalyst from "Check Pockets" recipes
 - Removed acid from uranium duplication
 - Added reseach for Void Stone
 - Added chance of getting nugget when using "Check Pockets"
 
-Version 0.0.13 / 22-10-2024
+---------------------------------------------------------------------------------------------------
+Version: 0.0.13 
+Date: 22-10-2024
 - Updated Factorio Version
 - Added Void Shards and Void Nuggets
 - Void recipes now require Void Shards
 - Duplication recipes now require Void Catalyst
 - Typos in descriptions
 
-Version 0.0.12 / 21-01-2024
+---------------------------------------------------------------------------------------------------
+Version: 0.0.12 
+Date: 21-01-2024
 - Added setting for what to do when there are more than 1000 Void Catalyst inside the Snatch Chest
 - Fixed bug when Void Catalyst was not generated if the interval set to 5 seconds
 
-Version 0.0.11 / 05-01-2024
+---------------------------------------------------------------------------------------------------
+Version: 0.0.11 
+Date: 05-01-2024
 - Added sixth Hungry Chest (F)
 - Updated translations
 - Adjusted probabilities for ore generation inside Hungry Chests
 - Snatch Chest now creates Condensed Void Stone if Void Catalyst count inside it exceeds one stack
 
-Version 0.0.10 / 16-10-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.10 
+Date: 16-10-2023
 - Removed Helping Books recipes
 - Removed Duplication recipes with catalyst (due to hungry chest can now consume Condensed Void Stone)
 - Added void furnace that produces Void Catalyst
 
-Version 0.0.9 / 25-09-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.9 
+Date: 25-09-2023
 - Increased fuel value of Condensed Void Stone to match "Annihilation Reactor" mod
 
-Version 0.0.8 / 24-09-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.8 
+Date: 24-09-2023
 - Optimized code
 - Added Condensed Void Stone - much denser form of Void Catalyst
 
-Version 0.0.7 / 07-09-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.7 
+Date: 07-09-2023
 - Fixed issue when Hungry Chest continues to consume void catalyst when inventory is full
 - Hungry Chest now produce iron and copper ores instead of plates
 
-Version 0.0.6 / 25-08-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.6 
+Date: 25-08-2023
 - Added Hungry Chests
 
-Version 0.0.5 / 24-08-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.5 
+Date: 24-08-2023
 Added settings:
 - Snatch Chest inventory size
 - Interval for Void Catalyst to be spawned inside the Snatch Chest
@@ -49,19 +78,27 @@ Added settings:
 - Fuel value of Void Catalyst
 - Chance of Void Catalyst be given on craft
 
-Version 0.0.4 / 17-08-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.4 
+Date: 17-08-2023
 - New animation for Void Generator
 
-Version 0.0.3 / 12-08-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.3 
+Date: 12-08-2023
 - Hidden Information Note's smelting recipes from player's crafting menu
 - Added Meditation recipe for infinite Void Catalyst production
 
-Version 0.0.2 / 12-08-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2 
+Date: 12-08-2023
 - Made Void Generator's sprite to match mod color schema
 - Increased fuel value of Void Catalyst
 - Made Void Generator's sound less annoying
 - Increased Snatch Chest's inventory to 200 slots
 - Made thumbnail font color darker to match other author's mods
 
-Version 0.0.1 / 09-08-2023
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1 
+Date: 09-08-2023
 - Initial mod state
