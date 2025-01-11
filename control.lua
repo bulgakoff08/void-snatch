@@ -16,23 +16,27 @@ local function calculateTicksForSpawnInterval ()
     return settings.startup[SETTING_VOID_CATALYST_SPAWN_INTERVAL].value * 60
 end
 
+local function safeInsertInventory (inventory, owner_name, item)
+    if inventory and inventory.valid then
+        return inventory.insert(item)
+    else
+        log(owner_name .. " showing invalid or no inventory or inventory is full inserting, {" .. item.name.. ", " .. item.count .."}")
+        log("    dump: " .. serpent.block(storage.player))
+    end
+    return 0
+end
+
 local spawnChance = settings.startup[SETTING_VOID_CATALYST_SPAWN_CHANCE].value * 100
 
 if spawnChance > 0 then
     script.on_event(defines.events.on_player_crafted_item, function(event)
         local player = game.players[event.player_index]
-        local inventory = storage.player[player.index].inventory
-        if inventory then
-            if spawnChance >= math.random(1, 100) then
-                inventory.insert({name = "vs-void-catalyst", count = 1})
-            end
+        if spawnChance >= math.random(1, 100) then
+            local inventory = storage.player[event.player_index].inventory
+            safeInsertInventory(inventory, player.name, {name="vs-void-catalyst", count=1})
         end
     end)
 end
-
-
-script.on_event(defines.events.on_player_created, function(event)
-end)
 
 -- Since inventory is not accessible in on_player_created - load it here
 script.on_event(defines.events.on_player_main_inventory_changed, function(event)
@@ -44,36 +48,35 @@ script.on_event(defines.events.on_player_main_inventory_changed, function(event)
         storage.player[player.index] = {initialized = true, inventory = inventory}      -- track each players inventory
     end
     inventory = storage.player[player.index].inventory
-    if inventory and not storage.player[player.index].filled then
-        inventory.insert({name = "vs-void-stone", count = 1})
-        inventory.insert({name = "vs-helping-book-1", count = 1})
-        inventory.insert({name = "vs-helping-book-2", count = 1})
-        inventory.insert({name = "vs-helping-book-3", count = 1})
-        inventory.insert({name = "vs-helping-book-4", count = 1})
-        inventory.insert({name = "vs-helping-book-5", count = 1})
-        storage.player[player.index].filled = true
+    if not storage.player[player.index].filled then
+        if  safeInsertInventory(inventory, player.name, {name="vs-void-stone",     count=1}) ~= 0 then
+            safeInsertInventory(inventory, player.name, {name="vs-helping-book-1", count=1})
+            safeInsertInventory(inventory, player.name, {name="vs-helping-book-2", count=1})
+            safeInsertInventory(inventory, player.name, {name="vs-helping-book-3", count=1})
+            safeInsertInventory(inventory, player.name, {name="vs-helping-book-4", count=1})
+            safeInsertInventory(inventory, player.name, {name="vs-helping-book-5", count=1})
+            storage.player[player.index].filled = true
+        end
     end
 end)
 
-script.on_event(defines.events.on_player_respawned, function(event)
-    local player = game.players[event.player_index]
-end)
     
 
 if calculateTicksForSpawnInterval() > 0 then
     script.on_nth_tick(calculateTicksForSpawnInterval(), function(event)
         for _, player in pairs(game.players) do
             local inventory = player.force.get_linked_inventory("vs-snatch-chest", 0)
-            if inventory == nil then
+            if (inventory == nil) or (not inventory.valid) then
+                log("calculateTicksForSpawnInterval: nil or invalid inventory for " .. player.name)
                 return
             end
             if inventory.get_item_count("vs-void-stone") < 1 then
                 return
             end
             if inventory.get_item_count("vs-void-catalyst") < 1000 then
-                inventory.insert({ name = "vs-void-catalyst", count = 1})
+                safeInsertInventory (inventory, player.name, {name="vs-void-catalyst", count=1})
             elseif settings.startup[SETTING_VOID_CATALYST_EXCESS_SCENARIO].value == SCENARIO_CONTINUE then
-                inventory.insert({ name = "vs-void-catalyst", count = 1})
+                safeInsertInventory (inventory, player.name, {name="vs-void-catalyst", 1})
             end
         end
     end)
@@ -112,7 +115,7 @@ local function fillInventory (inventory, table)
     local inserted = 0
     for key, value in pairs(table) do
         if value > 0 then
-            inserted = inserted + inventory.insert({name = key, count = value})
+            inserted = inserted + safeInsertInventory(inventory, "Fill Inventory", {name = key, count = value})
         end
     end
     return inserted
