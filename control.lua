@@ -44,12 +44,17 @@ script.on_event(defines.events.on_player_main_inventory_changed, function(event)
     local inventory = player.get_main_inventory()
     if not storage.player[player.index] then
         storage.player[player.index] = {initialized = true, inventory = inventory}
-    elseif not storage.player[player.index].initialized then 
+    elseif not storage.player[player.index].initialized then
         storage.player[player.index] = {initialized = true, inventory = inventory}      -- track each players inventory
     end
     inventory = storage.player[player.index].inventory
+    if not inventory.valid then
+        inventory = player.get_main_inventory()
+        storage.player[player.index].inventory = inventory
+        log("onPlayerMainInventoryChanged: restore inventory to player's main inventory since it was invalid for " .. player.name)
+    end
     if not storage.player[player.index].filled then
-        if  safeInsertInventory(inventory, player.name, {name="vs-void-stone",     count=1}) ~= 0 then
+        if  safeInsertInventory(inventory, player.name, {name="vs-void-stone", count=1}) ~= 0 then
             safeInsertInventory(inventory, player.name, {name="vs-helping-book-1", count=1})
             safeInsertInventory(inventory, player.name, {name="vs-helping-book-2", count=1})
             safeInsertInventory(inventory, player.name, {name="vs-helping-book-3", count=1})
