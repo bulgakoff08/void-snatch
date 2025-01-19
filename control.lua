@@ -92,16 +92,6 @@ if spawnChance > 0 then
     script.on_event(defines.events.on_player_crafted_item, function(event)
         randomChanceToEarnCatalyst(event.player_index)
     end)
-
-    -- add option for bot only mods to earn catalysts every time they build something
-    script.on_event(defines.events.on_robot_built_entity, function(event)
-        randomChanceToEarnCatalyst(event.robot.force.players[1].index)
-    end)
-
-    script.on_event(defines.events.on_robot_mined_entity, function(event)
-        randomChanceToEarnCatalyst(event.robot.force.players[1].index)
-    end)
-
 end
 
 -- ===========================================================================================================
