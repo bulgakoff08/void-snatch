@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.18 - updated vfinn/JustGoFly
+- Remote interface to redirectInventory completed
+- Redirected the destination for insertion of void-catalysts to the box.
+- Changed the init and population of the inventory or box to on_player_joined_game - which is called ONCE per player, so lower impact on cpu (minimal), but the initial books show up in chest without first attempting to craft something.
+- Added chances to earn catalysts when bots harvest something, or build a building
+---------------------------------------------------------------------------------------------------
 Version: 0.0.17
 Date: 12-1-2025
 - bug fix - found a reason of inventory invalidation
