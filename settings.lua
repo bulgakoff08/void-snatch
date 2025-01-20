@@ -4,6 +4,8 @@ local SETTING_VOID_GENERATOR_OUTPUT = "vs-void-generator-output"
 local SETTING_VOID_CATALYST_FUEL_VALUE = "vs-void-catalyst-fuel-value"
 local SETTING_VOID_CATALYST_SPAWN_CHANCE = "vs-void-catalyst-spawn-chance"
 local SETTING_VOID_CATALYST_EXCESS_SCENARIO = "vs-void-catalyst-excess-scenario"
+local SETTING_DUPLICATION_RECIPE_IN = "vs-duplication-recipe-in"
+local SETTING_DUPLICATION_RECIPE_OUT = "vs-duplication-recipe-out"
 
 data:extend({
     {
@@ -13,6 +15,22 @@ data:extend({
         default_value = 150,
         minimum_value = 1,
         maximum_value = 10000
+    },
+    {
+        type = "int-setting",
+        name = SETTING_DUPLICATION_RECIPE_IN,
+        setting_type = "startup",
+        default_value = 5,
+        minimum_value = 1,
+        maximum_value = 50
+    },
+    {
+        type = "int-setting",
+        name = SETTING_DUPLICATION_RECIPE_OUT,
+        setting_type = "startup",
+        default_value = 6,
+        minimum_value = 2,
+        maximum_value = 100
     },
     {
         type = "int-setting",
