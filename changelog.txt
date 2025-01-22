@@ -1,5 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.18 - updated vfinn/JustGoFly, mad_engineer
+Date 22-1-2025
 - Remote interface to redirectInventory completed
 - Redirected the destination for insertion of void-catalysts to the box.
 - Changed the init and population of the inventory or box to on_player_joined_game - which is called ONCE per player, so lower impact on cpu (minimal), but the initial books show up in chest without first attempting to craft something.
