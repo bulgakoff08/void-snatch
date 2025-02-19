@@ -107,6 +107,7 @@ data:extend({
     recipe("crafting", "void-machines", 1, "vs-void-generator", items("iron-chest", 1, "iron-gear-wheel", 3, "copper-cable", 10, "vs-void-catalyst", 50), items("vs-void-generator", 1)),
     recipe("crafting", "void-machines", 1, "vs-snatch-chest", items("iron-chest", 1, "vs-void-catalyst", 50), items("vs-snatch-chest", 1)),
     recipe("crafting", "void-machines", 1, "vs-void-furnace", items("stone-furnace", 1, "vs-void-catalyst", 200), items("vs-void-furnace", 1)),
+    recipe("crafting", "void-machines", 1, "vs-void-assembling-machine", items("assembling-machine-2", 1, "vs-void-catalyst", 500, "vs-used-void-nugget", 2), items("vs-void-assembling-machine", 1)),
 
     recipe("crafting", "void-chests", 1, "vs-hungry-chest-a", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-a", 1)),
     recipe("crafting", "void-chests", 1, "vs-hungry-chest-b", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-b", 1)),

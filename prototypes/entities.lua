@@ -417,5 +417,100 @@ data:extend({
     createHungryChest("c", 4907),
     createHungryChest("d", 4908),
     createHungryChest("e", 4909),
-    createHungryChest("f", 4916)
+    createHungryChest("f", 4916),
+    {
+        type = "assembling-machine",
+        name = "vs-void-assembling-machine",
+        icon = GRAPHICS_PATH .. "icons/vs-void-assembling-machine.png",
+        flags = {"placeable-neutral","placeable-player", "player-creation"},
+        minable = {mining_time = 0.2, result = "vs-void-assembling-machine"},
+        max_health = 400,
+        corpse = "assembling-machine-3-remnants",
+        dying_explosion = "assembling-machine-3-explosion",
+        icon_draw_specification = {shift = {0, -0.3}},
+        circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
+        circuit_connector = circuit_connector_definitions["assembling-machine"],
+        alert_icon_shift = util.by_pixel(0, -12),
+        resistances = {{type = "fire", percent = 70}},
+        fluid_boxes = {
+            {
+                production_type = "input",
+                pipe_picture = assembler3pipepictures(),
+                pipe_covers = pipecoverspictures(),
+                volume = 1000,
+                pipe_connections = {{flow_direction="input", direction = defines.direction.north, position = {0, -1}}},
+                secondary_draw_orders = {north = -1 }
+            },
+            {
+                production_type = "output",
+                pipe_picture = assembler3pipepictures(),
+                pipe_covers = pipecoverspictures(),
+                volume = 1000,
+                pipe_connections = {{flow_direction="output", direction = defines.direction.south, position = {0, 1}}},
+                secondary_draw_orders = {north = -1}
+            }
+        },
+        fluid_boxes_off_when_no_fluid_recipe = true,
+        open_sound = {filename = "__base__/sound/machine-open.ogg", volume = 0.85},
+        close_sound = {filename = "__base__/sound/machine-close.ogg", volume = 0.75},
+        vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+        impact_category = "metal",
+        working_sound = {
+            sound = { filename = "__base__/sound/assembling-machine-t3-1.ogg", volume = 0.45},
+            audible_distance_modifier = 0.5,
+            fade_in_ticks = 4,
+            fade_out_ticks = 20
+        },
+        collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+        selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+        drawing_box_vertical_extension = 0.2,
+        fast_replaceable_group = "assembling-machine",
+        graphics_set =
+        {
+            animation_progress = 0.5,
+            animation = {
+                layers = {
+                    {
+                        filename = GRAPHICS_PATH .. "entities/void-assembling-machine.png",
+                        priority = "high",
+                        width = 214,
+                        height = 237,
+                        frame_count = 32,
+                        line_length = 8,
+                        shift = util.by_pixel(0, -0.75),
+                        scale = 0.5
+                    },
+                    {
+                        filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-shadow.png",
+                        priority = "high",
+                        width = 260,
+                        height = 162,
+                        frame_count = 32,
+                        line_length = 8,
+                        draw_as_shadow = true,
+                        shift = util.by_pixel(28, 4),
+                        scale = 0.5
+                    }
+                }
+            }
+        },
+
+        crafting_categories = {"basic-crafting", "crafting", "advanced-crafting", "crafting-with-fluid"},
+        crafting_speed = 1,
+        energy_source = {
+            type = "burner",
+            fuel_categories = {"void-fuel"},
+            effectivity = 1,
+            fuel_inventory_size = 1,
+            emissions_per_minute = {pollution = 0},
+            light_flicker = {
+                color = {0,0,0},
+                minimum_intensity = 0.6,
+                maximum_intensity = 0.95
+            }
+        },
+        energy_usage = "375kW",
+        module_slots = 6,
+        allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"}
+    }
 })

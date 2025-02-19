@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.19
+Date 19-2-2025
+- Added Void Assembling Machine
+---------------------------------------------------------------------------------------------------
 Version: 0.0.18 - updated vfinn/JustGoFly, mad_engineer
 Date 22-1-2025
 - Remote interface to redirectInventory completed
