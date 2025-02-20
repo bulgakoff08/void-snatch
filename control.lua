@@ -89,7 +89,10 @@ end
 
 script.on_event(defines.events.on_player_changed_surface, function(event)
     local player = game.players[event.player_index]
-    log("onPlayerChangedSurface: player " .. player.name .. " changed surfaces to " .. game.surfaces[event.surface_index].name)
+    log("onPlayerChangedSurface: player " .. player.name .. " changed surface")
+    if event.surface_index and game.surfaces[event.surface_index] then -- event.surface_index produced nil when removed surface from editor
+        log("onPlayerChangedSurface: surface name: " .. game.surfaces[event.surface_index].name)
+    end
 end)
 
 

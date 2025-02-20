@@ -69,9 +69,7 @@ data:extend({
         flags = {"placeable-neutral", "player-creation"},
         minable = {
             mining_time = 0.5,
-            results = {
-                {type = "item", name = "vs-void-generator", amount = 1}
-            }
+            results = {{type = "item", name = "vs-void-generator", amount = 1}}
         },
         max_health = 250,
         corpse = "iron-chest-remnants",
@@ -111,43 +109,35 @@ data:extend({
                     stripes = {
                         {
                             filename = GRAPHICS_PATH .. "entities/void-generator-a.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/void-generator-b.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/void-generator-c.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/void-generator-d.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/void-generator-e.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/void-generator-f.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/void-generator-g.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/void-generator-h.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         }
                     }
                 },
@@ -162,43 +152,35 @@ data:extend({
                     stripes = {
                         {
                             filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         },
                         {
                             filename = GRAPHICS_PATH .. "entities/chest-shadow.png",
-                            width_in_frames = 1,
-                            height_in_frames = 1
+                            width_in_frames = 1, height_in_frames = 1
                         }
                     }
                 }
@@ -221,9 +203,7 @@ data:extend({
         flags = {"placeable-neutral", "player-creation"},
         minable = {
             mining_time = 0.5,
-            results = {
-                {type = "item", name = "vs-snatch-chest", amount = 1}
-            }
+            results = {{type = "item", name = "vs-snatch-chest", amount = 1}}
         },
         max_health = 250,
         corpse = "iron-chest-remnants",
@@ -275,9 +255,7 @@ data:extend({
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         minable = {
             mining_time = 0.5,
-            results = {
-                {type = "item", name = "vs-void-furnace", amount = 1}
-            }
+            results = {{type = "item", name = "vs-void-furnace", amount = 1}}
         },
         max_health = 200,
         corpse = "stone-furnace-remnants",
@@ -309,11 +287,7 @@ data:extend({
             effectivity = 1,
             fuel_inventory_size = 1,
             emissions_per_minute = {pollution = 0},
-            light_flicker = {
-                color = {0,0,0},
-                minimum_intensity = 0.6,
-                maximum_intensity = 0.95
-            }
+            light_flicker = {color = {0,0,0}, minimum_intensity = 0.6, maximum_intensity = 0.95}
         },
         graphics_set = {
             animation = {
@@ -354,23 +328,19 @@ data:extend({
                                 stripes = {
                                     {
                                         filename = GRAPHICS_PATH .. "entities/void-furnace-a.png",
-                                        width_in_frames = 1,
-                                        height_in_frames = 1
+                                        width_in_frames = 1, height_in_frames = 1
                                     },
                                     {
                                         filename = GRAPHICS_PATH .. "entities/void-furnace-b.png",
-                                        width_in_frames = 1,
-                                        height_in_frames = 1
+                                        width_in_frames = 1, height_in_frames = 1
                                     },
                                     {
                                         filename = GRAPHICS_PATH .. "entities/void-furnace-c.png",
-                                        width_in_frames = 1,
-                                        height_in_frames = 1
+                                        width_in_frames = 1, height_in_frames = 1
                                     },
                                     {
                                         filename = GRAPHICS_PATH .. "entities/void-furnace-d.png",
-                                        width_in_frames = 1,
-                                        height_in_frames = 1
+                                        width_in_frames = 1, height_in_frames = 1
                                     }
                                 }
                             },
@@ -386,23 +356,19 @@ data:extend({
                                 stripes = {
                                     {
                                         filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
-                                        width_in_frames = 1,
-                                        height_in_frames = 1
+                                        width_in_frames = 1, height_in_frames = 1
                                     },
                                     {
                                         filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
-                                        width_in_frames = 1,
-                                        height_in_frames = 1
+                                        width_in_frames = 1, height_in_frames = 1
                                     },
                                     {
                                         filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
-                                        width_in_frames = 1,
-                                        height_in_frames = 1
+                                        width_in_frames = 1, height_in_frames = 1
                                     },
                                     {
                                         filename = GRAPHICS_PATH .. "entities/void-furnace-shadow.png",
-                                        width_in_frames = 1,
-                                        height_in_frames = 1
+                                        width_in_frames = 1, height_in_frames = 1
                                     }
                                 }
                             }
@@ -456,17 +422,14 @@ data:extend({
         vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
         impact_category = "metal",
         working_sound = {
-            sound = { filename = "__base__/sound/assembling-machine-t3-1.ogg", volume = 0.45},
-            audible_distance_modifier = 0.5,
-            fade_in_ticks = 4,
-            fade_out_ticks = 20
+            sound = {filename = "__base__/sound/assembling-machine-t3-1.ogg", volume = 0.45},
+            audible_distance_modifier = 0.5, fade_in_ticks = 4, fade_out_ticks = 20
         },
         collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
         selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
         drawing_box_vertical_extension = 0.2,
         fast_replaceable_group = "assembling-machine",
-        graphics_set =
-        {
+        graphics_set = {
             animation_progress = 0.5,
             animation = {
                 layers = {
@@ -494,7 +457,6 @@ data:extend({
                 }
             }
         },
-
         crafting_categories = {"basic-crafting", "crafting", "advanced-crafting", "crafting-with-fluid"},
         crafting_speed = 1,
         energy_source = {
@@ -503,11 +465,7 @@ data:extend({
             effectivity = 1,
             fuel_inventory_size = 1,
             emissions_per_minute = {pollution = 0},
-            light_flicker = {
-                color = {0,0,0},
-                minimum_intensity = 0.6,
-                maximum_intensity = 0.95
-            }
+            light_flicker = {color = {0,0,0}, minimum_intensity = 0.6, maximum_intensity = 0.95}
         },
         energy_usage = "375kW",
         module_slots = 6,

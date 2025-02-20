@@ -1,25 +1,22 @@
 local GRAPHICS_PATH = "__void-snatch__/graphics/"
 
-local SETTING_VOID_CATALYST_FUEL_VALUE = "vs-void-catalyst-fuel-value"
-
-local ENERGY_VALUE_DICT = {
-    ["6MJ"] = {value = 6, unit = "MJ"},
-    ["12MJ"] = {value = 12, unit = "MJ"},
-    ["24MJ"] = {value = 24, unit = "MJ"},
-    ["48MJ"] = {value = 48, unit = "MJ"},
-    ["100MJ"] = {value = 100, unit = "MJ"},
-    ["1GJ"] = {value = 1, unit = "GJ"},
-}
-
-local function item (itemId, stackSize, subgroup)
+local function itemWithIcon (itemId, icon, stackSize, subgroup)
     return {
         type = "item",
         name = itemId,
-        icon = GRAPHICS_PATH .. "icons/" .. itemId .. ".png",
+        icon = GRAPHICS_PATH .. "icons/" .. icon .. ".png",
         icon_size = 64,
         subgroup = subgroup,
         stack_size = stackSize
     }
+end
+
+local function item (itemId, stackSize, subgroup)
+    return itemWithIcon(itemId, itemId, stackSize, subgroup)
+end
+
+local function helpingBook (bookId)
+    return itemWithIcon(bookId, "vs-helping-book", 1, "void-machines")
 end
 
 local function fuel (itemId, stackSize, subgroup, energyValue)
@@ -36,16 +33,13 @@ local function machine (itemId, stackSize, subgroup)
     return result
 end
 
-local energyValue = ENERGY_VALUE_DICT[settings.startup[SETTING_VOID_CATALYST_FUEL_VALUE].value]
-
 data:extend({
-
     item("vs-void-stone", 1, "catalyst-duplication"),
     item("vs-void-shard", 10, "catalyst-duplication"),
     item("vs-void-nugget", 100, "catalyst-duplication"),
     item("vs-used-void-nugget", 100, "catalyst-duplication"),
 
-    fuel("vs-void-catalyst", 1000, "catalyst-duplication", energyValue.value .. energyValue.unit),
+    fuel("vs-void-catalyst", 1000, "catalyst-duplication", settings.startup["vs-void-catalyst-fuel-value"].value),
 
     machine("vs-snatch-chest", 50, "void-machines"),
     machine("vs-void-generator", 50, "void-machines"),
@@ -59,44 +53,9 @@ data:extend({
     machine("vs-hungry-chest-e", 50, "void-chests"),
     machine("vs-hungry-chest-f", 50, "void-chests"),
 
-    {
-        type = "item",
-        name = "vs-helping-book-1",
-        icon = GRAPHICS_PATH .. "icons/vs-helping-book.png",
-        icon_size = 64,
-        subgroup = "void-machines",
-        stack_size = 1
-    },
-    {
-        type = "item",
-        name = "vs-helping-book-2",
-        icon = GRAPHICS_PATH .. "icons/vs-helping-book.png",
-        icon_size = 64,
-        subgroup = "void-machines",
-        stack_size = 1
-    },
-    {
-        type = "item",
-        name = "vs-helping-book-3",
-        icon = GRAPHICS_PATH .. "icons/vs-helping-book.png",
-        icon_size = 64,
-        subgroup = "void-machines",
-        stack_size = 1
-    },
-    {
-        type = "item",
-        name = "vs-helping-book-4",
-        icon = GRAPHICS_PATH .. "icons/vs-helping-book.png",
-        icon_size = 64,
-        subgroup = "void-machines",
-        stack_size = 1
-    },
-    {
-        type = "item",
-        name = "vs-helping-book-5",
-        icon = GRAPHICS_PATH .. "icons/vs-helping-book.png",
-        icon_size = 64,
-        subgroup = "void-machines",
-        stack_size = 1
-    }
+    helpingBook("vs-helping-book-1"),
+    helpingBook("vs-helping-book-2"),
+    helpingBook("vs-helping-book-3"),
+    helpingBook("vs-helping-book-4"),
+    helpingBook("vs-helping-book-5")
 })
