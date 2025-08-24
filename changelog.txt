@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.20
+Date 24-8-2-25
+- Added Chinese translation by @Su-Xinxin (https://mods.factorio.com/user/Su-Xinxin)
+---------------------------------------------------------------------------------------------------
 Version: 0.0.19
 Date 19-2-2025
 - Added Void Assembling Machine
