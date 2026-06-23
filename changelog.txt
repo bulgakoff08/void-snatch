@@ -2,7 +2,7 @@
 Version: 0.0.21
 Date 23-6-2026
 - Updated code to match factorio 2.1 API
-- Removed void assembling machine due to dependency on old versions of vanilla assebling machines
+- Removed void assembling machine due to heavy dependency on old versions of vanilla assebling machines
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.20
 Date 24-8-2025
