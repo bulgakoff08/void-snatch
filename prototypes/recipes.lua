@@ -19,7 +19,7 @@ local function ingredient(itemId, count)
         return {
             type = type(itemId),
             name = itemId,
-            probability = count
+            independent_probability = count
         }
     else
         return {
@@ -43,7 +43,7 @@ local function recipe(category, subgroup, duration, recipeId, inputs, outputs)
     return {
         type = "recipe",
         name = recipeId,
-        category = category,
+        categories = {category},
         subgroup = subgroup,
         energy_required = duration,
         ingredients = inputs,
@@ -107,7 +107,6 @@ data:extend({
     recipe("crafting", "void-machines", 1, "vs-void-generator", items("iron-chest", 1, "iron-gear-wheel", 3, "copper-cable", 10, "vs-void-catalyst", 50), items("vs-void-generator", 1)),
     recipe("crafting", "void-machines", 1, "vs-snatch-chest", items("iron-chest", 1, "vs-void-catalyst", 50), items("vs-snatch-chest", 1)),
     recipe("crafting", "void-machines", 1, "vs-void-furnace", items("stone-furnace", 1, "vs-void-catalyst", 200), items("vs-void-furnace", 1)),
-    recipe("crafting", "void-machines", 1, "vs-void-assembling-machine", items("assembling-machine-2", 1, "vs-void-catalyst", 500, "vs-used-void-nugget", 2), items("vs-void-assembling-machine", 1)),
 
     recipe("crafting", "void-chests", 1, "vs-hungry-chest-a", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-a", 1)),
     recipe("crafting", "void-chests", 1, "vs-hungry-chest-b", items("iron-chest", 1, "vs-void-catalyst", 100), items("vs-hungry-chest-b", 1)),
@@ -119,7 +118,7 @@ data:extend({
     {
         type = "recipe",
         name = "vs-meditate",
-        category = "crafting",
+        categories = {"crafting"},
         subgroup = "void-other",
         energy_required = 300,
         icon = GRAPHICS_PATH .. "icons/recipes/meditate.png",
@@ -133,40 +132,40 @@ data:extend({
     {
         type = "recipe",
         name = "vs-void-snatch",
-        category = "crafting",
+        categories = {"crafting"},
         subgroup = "void-machines",
         energy_required = 5,
         icon = GRAPHICS_PATH .. "icons/recipes/void-snatch.png",
         icon_size = 64,
         ingredients = {},
         results = {
-            {type = "item", name = "vs-used-void-nugget", amount = 1, probability = 0.005},
-            {type = "item", name = "coal", amount = 1, probability = 0.3},
-            {type = "item", name = "copper-ore", amount = 1, probability = 0.2},
-            {type = "item", name = "iron-ore", amount = 1, probability = 0.5},
-            {type = "item", name = "stone", amount = 1, probability = 0.4},
-            {type = "item", name = "uranium-ore", amount = 1, probability = 0.05},
-            {type = "item", name = "wood", amount = 1, probability = 0.4}
+            {type = "item", name = "vs-used-void-nugget", amount = 1, independent_probability = 0.005},
+            {type = "item", name = "coal", amount = 1, independent_probability = 0.3},
+            {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.2},
+            {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.5},
+            {type = "item", name = "stone", amount = 1, independent_probability = 0.4},
+            {type = "item", name = "uranium-ore", amount = 1, independent_probability = 0.05},
+            {type = "item", name = "wood", amount = 1, independent_probability = 0.4}
         }
     },
     {
         type = "recipe",
         name = "vs-void-snatch-with-oil",
-        category = "crafting-with-fluid",
+        categories = {"crafting-with-fluid"},
         subgroup = "void-machines",
         energy_required = 5,
         icon = GRAPHICS_PATH .. "icons/recipes/void-snatch-oil.png",
         icon_size = 64,
         ingredients = {},
         results = {
-            {type = "item", name = "vs-used-void-nugget", amount = 1, probability = 0.005},
-            {type = "item", name = "coal", amount = 1, probability = 0.3},
-            {type = "item", name = "copper-ore", amount = 1, probability = 0.2},
-            {type = "item", name = "iron-ore", amount = 1, probability = 0.5},
-            {type = "item", name = "stone", amount = 1, probability = 0.4},
-            {type = "item", name = "uranium-ore", amount = 1, probability = 0.05},
-            {type = "item", name = "wood", amount = 1, probability = 0.4},
-            {type = "fluid", name = "crude-oil", amount = 100, probability = 0.2}
+            {type = "item", name = "vs-used-void-nugget", amount = 1, independent_probability = 0.005},
+            {type = "item", name = "coal", amount = 1, independent_probability = 0.3},
+            {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.2},
+            {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.5},
+            {type = "item", name = "stone", amount = 1, independent_probability = 0.4},
+            {type = "item", name = "uranium-ore", amount = 1, independent_probability = 0.05},
+            {type = "item", name = "wood", amount = 1, independent_probability = 0.4},
+            {type = "fluid", name = "crude-oil", amount = 100, independent_probability = 0.2}
         }
     }
 })
