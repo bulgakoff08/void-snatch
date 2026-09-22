@@ -1,8 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version 0.0.22
+Date 22-9-2026
+- Updated code to match Factorio 1.2.20 API
+---------------------------------------------------------------------------------------------------
 Version: 0.0.21
 Date 23-6-2026
 - Updated code to match factorio 2.1 API
-- Removed void assembling machine due to heavy dependency on old versions of vanilla assebling machines
+- Removed void assembling machine due to heavy dependency on old versions of vanilla assembling machines
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.20
 Date 24-8-2025
@@ -20,7 +24,7 @@ Date 22-1-2025
 - Changed void furnaces to perform ore duplication instead of catalyst production
 - Added settings for duplication recipes tweaking
 - Changed crude oil in and out amount to be a factor of (settings) x 5
-- Reduced chance of getting deplented void shard when crafting "Check Pockets" recipe
+- Reduced chance of getting depleted void shard when crafting "Check Pockets" recipe
 - Raised catalyst consumption for Void Furnaces
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.17
@@ -46,7 +50,7 @@ Date: 28-10-2024
 - Updated item descriptions to make it clearer and shorter
 - Removed void catalyst from "Check Pockets" recipes
 - Removed acid from uranium duplication
-- Added reseach for Void Stone
+- Added research for Void Stone
 - Added chance of getting nugget when using "Check Pockets"
 
 ---------------------------------------------------------------------------------------------------
