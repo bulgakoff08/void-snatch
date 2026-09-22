@@ -22,7 +22,9 @@ end
 local function fuel (itemId, stackSize, subgroup, energyValue)
     local result = item(itemId, stackSize, subgroup)
     result["fuel_value"] = energyValue
-    result["fuel_category"] = "void-fuel"
+    result["fuel_categories"] = {
+        "void-fuel"
+    }
     result["fuel_emissions_multiplier"] = 0 -- magic does not waste
     return result
 end
